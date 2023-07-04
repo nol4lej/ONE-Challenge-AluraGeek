@@ -1,0 +1,32 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    gap: auto;
+}
+
+.nav__logo{
+}
+
+.logo__img{
+    width: 100px;
+    height: 28px;
+}
+
+.login__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 133px;
+    height: 40px;
+    border: 1px solid var(--color-blue);
+    color: var(--color-blue);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.search__button{
+    font-size: 24px;
+    color: var(--color-gray);
+}
