@@ -1,6 +1,12 @@
-.products{
+.products__container{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     padding: 16px;
     color: var(--color-gray);
+}
+
+.products{
 }
 
 .products__header{
@@ -67,8 +73,9 @@
 
 @media screen and (min-width: 768px) {
 
-    .products{
+    .products__container{
         padding: 32px;
+        gap: 32px;
     }
     
     .items{
@@ -83,8 +90,9 @@
 
 @media screen and (min-width: 1220px) {
 
-    .products{
+    .products__container{
         padding: 64px 152px;
+        gap: 64px;
     }
 
     .item{

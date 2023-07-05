@@ -67,29 +67,32 @@ export function Main(){
             </div>
         </header>
 
-        <section class="products">
-            <div class="products__header">
-                <h2 class="products__title">Star Wars</h2>
-                <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
-            </div>
-            <div class="items" id="starwars"></div>
+        <section class="products__container">
+            <article class="products">
+                <div class="products__header">
+                    <h2 class="products__title">Star Wars</h2>
+                    <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="items" id="starwars"></div>
+            </article>
+
+            <article class="products">
+                <div class="products__header">
+                    <h2 class="products__title">Consolas</h2>
+                    <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="items" id="consola"></div>
+            </article>
+
+            <article class="products">
+                <div class="products__header">
+                    <h2 class="products__title">Otros</h2>
+                    <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
+                </div>
+                <div class="items" id="otros"></div>
+            </article>
         </section>
 
-        <section class="products">
-            <div class="products__header">
-                <h2 class="products__title">Consolas</h2>
-                <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
-            </div>
-            <div class="items" id="consola"></div>
-        </section>
-
-        <section class="products">
-            <div class="products__header">
-                <h2 class="products__title">Otros</h2>
-                <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
-            </div>
-            <div class="items" id="otros"></div>
-        </section>
 
     `
     FetchProducts()
