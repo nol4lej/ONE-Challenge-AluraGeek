@@ -45,7 +45,7 @@
 }
 
 .item {
-    width: 156px;
+    width: 144px;
     padding-bottom: 16px;
 }
 
@@ -58,7 +58,7 @@
     width: 100%;
 }
 
-@media screen and (min-width: 390px) {
+@media screen and (min-width: 359px) {
     
     .items{
         grid-template-columns: repeat(2, 1fr);
@@ -80,7 +80,7 @@
     
     .items{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     .item{
@@ -88,7 +88,7 @@
     }
 }
 
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1024px) {
 
     .products__container{
         padding: 64px 152px;
