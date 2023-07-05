@@ -1,8 +1,10 @@
 @import url("/src/css/reset.css");
 @import url("/src/css/nav.css");
+@import url("/src/css/header.css");
 
 :root{
 
+    --color-white: #FFFFFF;
     --color-blue: #2A7AE4;
     --color-gray: #464646;
     --color-gray-light: #A2A2A2;
