@@ -1,0 +1,53 @@
+{
+    "producto": [
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "1",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "1"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "2",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "3",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "3"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "4",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "5",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "6",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "7",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2"
+        }
+    ]
+}
