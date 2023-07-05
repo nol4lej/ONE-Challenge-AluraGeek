@@ -5,49 +5,112 @@
             "imageUrl": "/src/img/clon.png",
             "price": "1",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
-            "id": "1"
+            "id": "1",
+            "category": "starwars"
         },
         {
             "name": "Alura",
             "imageUrl": "/src/img/clon.png",
             "price": "2",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
-            "id": "2"
+            "id": "2",
+            "category": "starwars"
         },
         {
             "name": "Alura",
             "imageUrl": "/src/img/clon.png",
             "price": "3",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
-            "id": "3"
+            "id": "3",
+            "category": "starwars"
         },
         {
             "name": "Alura",
             "imageUrl": "/src/img/clon.png",
             "price": "4",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
-            "id": "2"
+            "id": "2",
+            "category": "starwars"
         },
         {
             "name": "Alura",
             "imageUrl": "/src/img/clon.png",
             "price": "5",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
-            "id": "2"
+            "id": "2",
+            "category": "starwars"
         },
         {
             "name": "Alura",
             "imageUrl": "/src/img/clon.png",
             "price": "6",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
-            "id": "2"
+            "id": "2",
+            "category": "starwars"
         },
         {
             "name": "Alura",
             "imageUrl": "/src/img/clon.png",
             "price": "7",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
-            "id": "2"
+            "id": "2",
+            "category": "starwars"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "1",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "1",
+            "category": "otros"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "2",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2",
+            "category": "otros"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "3",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "3",
+            "category": "consola"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "4",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2",
+            "category": "consola"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "5",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2",
+            "category": "consola"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "6",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2",
+            "category": "consola"
+        },
+        {
+            "name": "Alura",
+            "imageUrl": "/src/img/clon.png",
+            "price": "7",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit commodi voluptate repudiandae deleniti tenetur repellat sed sit, ullam possimus fuga neque, accusantium eum voluptatibus molestias sequi beatae impedit sapiente quibusdam!",
+            "id": "2",
+            "category": "consola"
         }
     ]
 }
