@@ -1,0 +1,9 @@
+.error__container{
+    padding: 204px;
+    text-align: center;
+}
+
+.error__title{
+    font-weight: 700;
+    font-size: 50px;
+}

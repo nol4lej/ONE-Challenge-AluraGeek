@@ -1,6 +1,15 @@
 import { Router } from "./src/router/router.js";
+import { Loading } from "./src/views/loading.js";
 
-Router(window.location.hash)
-window.addEventListener("hashchange", () => {
+
+Loading()
+setTimeout(() => {
     Router(window.location.hash)
+}, 1000)
+window.addEventListener("hashchange", () => {
+    Loading()
+    setTimeout(() => {
+        Router(window.location.hash)
+    }, 1000)
+    
 })
