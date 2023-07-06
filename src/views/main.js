@@ -3,7 +3,7 @@ import { ContactFooter } from "./contactfooter.js";
 
 function FetchProducts(){
     ClienteServices.GetProducts()
-    .then((data) => {
+    .then(data => {
         const contadores = {
             starwars: 0,
             consola: 0,
@@ -71,7 +71,7 @@ export function Main(){
             <article class="products">
                 <div class="products__header">
                     <h2 class="products__title">Star Wars</h2>
-                    <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
+                    <a href="#/starwars" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
                 </div>
                 <div class="items" id="starwars"></div>
             </article>
@@ -79,7 +79,7 @@ export function Main(){
             <article class="products">
                 <div class="products__header">
                     <h2 class="products__title">Consolas</h2>
-                    <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
+                    <a href="#/consola" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
                 </div>
                 <div class="items" id="consola"></div>
             </article>
@@ -87,7 +87,7 @@ export function Main(){
             <article class="products">
                 <div class="products__header">
                     <h2 class="products__title">Otros</h2>
-                    <a href="" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
+                    <a href="#/otros" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
                 </div>
                 <div class="items" id="otros"></div>
             </article>

@@ -6,8 +6,6 @@
     color: var(--color-gray);
 }
 
-.products{
-}
 
 .products__header{
     display: flex;
@@ -27,6 +25,10 @@
     font-weight: 700;
     font-size: 14px;
     color: var(--color-blue);
+}
+
+.products__link:hover{
+    color: var(--color-blue-bold);
 }
 
 .products__link i{
@@ -56,6 +58,8 @@
 
 .item__img{
     width: 100%;
+    max-width: 176px;
+    max-height: 174px;
 }
 
 @media screen and (min-width: 359px) {

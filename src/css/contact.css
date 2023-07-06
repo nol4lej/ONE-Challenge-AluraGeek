@@ -29,6 +29,12 @@
     font-weight: 500;
     font-size: 16px;
     color: var(--color-gray);
+    transition: all .1s ease-in-out;
+}
+
+.link__item:hover{
+    color: var(--color-blue);
+    font-weight: 600;
 }
 
 .form{
@@ -91,6 +97,11 @@
     color: var(--color-white);
     font-weight: 600;
     font-size: 14px;
+    transition: background .3s ease-in-out;
+}
+
+.form__button:hover{
+    background-color: var(--color-blue-bold);
 }
 
 @media screen and (min-width: 768px) {
