@@ -7,29 +7,44 @@ export function ViewProduct(route){
     const params = new URLSearchParams(hashParams);
     const currentId = params.get('id');
 
-    ClienteServices.GetProducts()
+    let currentCategory;
+    let products = []
+    let fintOutId = false
+    
+    if(currentId !== null){
+        console.log(currentId)
+        ClienteServices.GetProducts()
         .then(data => {
 
-            let currentCategory;
-            let products = []
-
+            // PRIMERO: busca el ID entro los productos, si lo encuentra renderiza, almacena su categoria y fintOutID es true.
             data.forEach(element => {
                 const productId = element.id;
                 if (currentId === productId) {
                     currentCategory = element.category;
-                    RenderProduct(element)
+                    RenderProduct(element);
+                    fintOutId = true;
                     return; // Detener la iteración
                 }
             });
 
-            data.forEach(element => {
-                if(currentCategory === element.category){
-                    products.push(element)
-                }
-            })
+            // SEGUNDO: Comprueba que findOutId haya cambiado su valor despues de la iteracion, si no es así. El ID ingresado es invalido.
+            if(fintOutId === false){
+                return Error()
+            } else {
+                // TERCERO: si fintOutId es true, entonces busca todos los productos de la misma categoria que el ID válido
+                data.forEach(element => {
+                    if(currentCategory === element.category){
+                        products.push(element)
+                    }
+                })
+                console.log(products)
+            }
 
-            console.log(products)
-    });
+        })  
+        .catch(err => console.log(err))
+    } else {
+        Error()
+    }
 }
 
 export function RenderProduct(product){
