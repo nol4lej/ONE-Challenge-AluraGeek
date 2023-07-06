@@ -1,5 +1,5 @@
-import { ClienteServices } from "../controllers/crud-controller.js"
-
+import { ClienteServices } from "../controllers/crud-controller.js";
+import { ContactFooter } from "./contactfooter.js";
 
 function FetchProducts(){
     ClienteServices.GetProducts()
@@ -8,7 +8,7 @@ function FetchProducts(){
             starwars: 0,
             consola: 0,
             otros: 0
-        }
+        };
         data.reverse().forEach(element => {
             const verifyCategory = element.category;
             switch (verifyCategory) {
@@ -43,9 +43,9 @@ function FetchProducts(){
 }
 
 function RenderItems(name, imageUrl, price, category){
-    const father = document.getElementById(`${category}`)
-    const div = document.createElement("div")
-    div.classList.add("item")
+    const father = document.getElementById(`${category}`);
+    const div = document.createElement("div");
+    div.classList.add("item");
     div.innerHTML = `
         <img class="item__img" src="${imageUrl}" alt="">
         <h3 class="item__title">${name}</h3>
@@ -53,11 +53,11 @@ function RenderItems(name, imageUrl, price, category){
         <p class="item__price">${category}</p>
         <a class="item__link" href="#">Ver Producto</a>
     `
-    father.appendChild(div)
+    father.appendChild(div);
 }
 
 export function Main(){
-    const root = document.getElementById("root")
+    const root = document.getElementById("root");
     root.innerHTML =`
         <header class="header">
             <div class="header__content">
@@ -94,6 +94,7 @@ export function Main(){
         </section>
 
 
-    `
-    FetchProducts()
+    `;
+    FetchProducts();
+    ContactFooter();
 }

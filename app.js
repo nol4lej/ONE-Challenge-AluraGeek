@@ -1,15 +1,13 @@
 import { Router } from "./src/router/router.js";
 import { Loading } from "./src/views/loading.js";
 
-
-Loading()
+Loading();
 setTimeout(() => {
     Router(window.location.hash)
-}, 1000)
+}, 500);
 window.addEventListener("hashchange", () => {
-    Loading()
+    Loading();
     setTimeout(() => {
         Router(window.location.hash)
-    }, 1000)
-    
-})
+    }, 500);
+});
