@@ -2,10 +2,11 @@ import { Main } from "../views/main.js";
 import { Error } from "../views/error.js";
 import { Login } from "../views/login.js";
 import { ProductsByCategory } from "../views/allbycategory.js";
+import { ViewProduct } from "../views/viewproduct.js";
 
 const root = document.getElementById("root")
 
-export function Router(route){
+export async function Router(route){
     root.innerHTML = ""
     switch (route) {
         case "#/":
@@ -21,7 +22,7 @@ export function Router(route){
             document.startViewTransition(() => ProductsByCategory(route))
             break;
         default:
-            document.startViewTransition(() => Error())
+            await document.startViewTransition(() => ViewProduct(route));
             break;
     }
 }
