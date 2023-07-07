@@ -6,9 +6,10 @@ import { ViewProduct } from "../views/viewproduct.js";
 import { AddProduct } from "../views/addproduct.js";
 import { Register } from "../views/register.js";
 
-const root = document.getElementById("root")
+
 
 export async function Router(route){
+    const root = document.getElementById("root")
     root.innerHTML = ""
     switch (route) {
         case "#/":

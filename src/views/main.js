@@ -75,7 +75,7 @@ export function Main(){
             <div class="header__content">
                 <h1 class="header__title">Febrero Promocional</h1>
                 <p class="header__info">Productos seleccionados con 33% de descuento</p>
-                <a class="header__button">Ver Consolas</a>
+                <a href="#/consola" class="header__button">Ver Consolas</a>
             </div>
         </header>
 

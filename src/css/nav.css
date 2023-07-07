@@ -22,8 +22,8 @@
     gap: 8px;
 }
 
-.login__button{
-    display: flex;
+.login__button, .register__button, .logout__button, .panel__button{
+    display: none;
     justify-content: center;
     align-items: center;
     width: 133px;
@@ -33,9 +33,10 @@
     font-weight: 600;
     font-size: 14px;
     transition: all .3s ease-in-out;
+    text-align: center;
 }
 
-.login__button:hover{
+.login__button:hover, .register__button:hover, .logout__button:hover, .panel__button:hover{
     color: var(--color-white);
     background-color: var(--color-blue);
 }
@@ -66,7 +67,7 @@
         order: 3;
     }
 
-    .login__button{
+    .login__button, .register__button, .logout__button, .panel__button{
         width: 166px;
     }
 
@@ -127,7 +128,7 @@
         /* width: 329px; */
     }
 
-    .login__button{
+    .login__button, .register__button, .logout__button, .panel__button{
         width: 182px;
         font-size: 16px;
         font-weight: 400;

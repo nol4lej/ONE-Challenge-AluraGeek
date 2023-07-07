@@ -1,0 +1,77 @@
+.register{
+    padding: 92px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--bg-gray-light);
+}
+
+.register__title{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 423px;
+    gap: 16px;
+}
+
+.register__email, .register__password{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 12px 25px 12px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-gray);
+    width: 100%;
+}
+
+.register__email::placeholder, .register__password::placeholder{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-gray-light);    
+}
+
+.register__email__container, .register__password__container{
+    display: flex;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.register__password__container{
+    border-bottom: 2px solid var(--border-input);
+}
+
+.register__button__form{
+    padding: 12px 16px;
+    width: max-content;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+
+    .register, .register__form{
+        gap: 25px;
+    }
+    
+    .register__button__form{
+        width: 100%;
+        height: 62px;
+        font-size: 18px;
+    }
+
+    .register__title{
+        font-size: 18px;
+    }
+
+}
