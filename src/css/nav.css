@@ -1,5 +1,6 @@
 .nav{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 16px;
@@ -8,6 +9,17 @@
 .logo__img{
     width: 100px;
     height: 28px;
+}
+
+.nav__login__search{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav__login{
+    display: flex;
+    gap: 8px;
 }
 
 .login__button{
@@ -40,8 +52,14 @@
 @media screen and (min-width: 768px) {
 
     .nav{
-        gap: 32px;
+        flex-direction: row;
+        gap: 8px;
         padding: 16px 32px;
+    }
+
+    .nav__login__search{
+        width: 100%;
+        justify-content: space-between;
     }
     
     .nav__login{
@@ -54,14 +72,12 @@
 
     .nav__search{
         order: 2;
-        width: 100%;
     }
 
     .search__container{
         display: flex;
         align-items: center;
         background-color: var(--bg-gray);
-        width: 272px;
         padding: 8px 16px;
         border-radius: 50px;
         gap: 8px;
@@ -71,7 +87,6 @@
         display: block;
         border: none;
         background: none;
-        width: 207px;
     }
 
     .search__input:focus{
@@ -84,10 +99,19 @@
 
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 820px) {
+
+    .nav{
+        gap: 32px;
+    }
+    
+}
+
+@media screen and (min-width: 1220px) {
     
     .nav{
         padding: 32px 152px;
+        gap: 32px;
     }
 
     .logo__img{
@@ -96,11 +120,11 @@
     }
 
     .search__container{
-        width: 393px;
+        /* width: 393px; */
     }
 
     .search__input{
-        width: 329px;
+        /* width: 329px; */
     }
 
     .login__button{

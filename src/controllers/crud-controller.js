@@ -3,8 +3,8 @@ const GetProducts = async () => {
     .then(res => res.json())
 }
 
-const ViewProduct = async (url) => {
-    return fetch(`http://localhost:3000/productos/${url}`)
+const ViewProduct = async (id) => {
+    return fetch(`http://localhost:3000/productos/${id}`)
     .then(res => res.json())
 }
 

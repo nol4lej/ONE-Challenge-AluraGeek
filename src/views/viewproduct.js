@@ -9,7 +9,7 @@ export function ViewProduct(route){
 
     let currentCategory;
     let products = []
-    let fintOutId = false
+    let fintOutId = false // variable que maneja el estado si el currentId es valido
     
     if(currentId !== null){
         console.log(currentId)
