@@ -2,7 +2,6 @@ import { userStateManage } from "./users-manage.js"
 
 class AuthStateObserver{
     notify(subject){
-        console.log(subject.users)
         if(subject.users){
             document.getElementById("btn-login").style.display = "none"
             document.getElementById("btn-reg").style.display = "none"

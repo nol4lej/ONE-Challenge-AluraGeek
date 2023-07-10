@@ -1,5 +1,5 @@
-import { ClienteServices } from "../controllers/crud-controller.js";
-import { Error } from "./error.js";
+import { ClienteServices } from "../../controllers/crud-controller.js";
+import { Error } from "../error.js";
 
 export function ViewProduct(route){
     const completeUrl = new URL(`http://127.0.0.1:8080/${route}`).href

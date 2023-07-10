@@ -1,4 +1,4 @@
-import { ContactFooter } from "./contactfooter.js"
+import { ContactFooter } from "../contactfooter.js"
 
 export function AddProduct(){
     const root = document.getElementById("root")

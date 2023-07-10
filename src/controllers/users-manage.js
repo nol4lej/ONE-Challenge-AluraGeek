@@ -1,6 +1,7 @@
-import { onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"
-import { auth } from "./firebase.js"
-import { Subject } from "./subject.js"
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
+import { onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"
+import { auth, db } from "./firebase.js"
+import { Subject } from "../helpers/subject.js"
 
 class UserStateManage extends Subject{
     constructor(){
@@ -14,15 +15,25 @@ class UserStateManage extends Subject{
     }
 
     AuthState(){
-        onAuthStateChanged(auth, async (user) => {
-            console.log("USER DESDE onAuthStateChanged:", user)
-            this.notify(user) // se notifica aun que sea null, para controlar los botones de sesion
-        })
+        try {
+            onAuthStateChanged(auth, async (user) => {
+                console.log("USER DESDE onAuthStateChanged:", user)
+                this.notify(user) // se notifica aun que sea null, para controlar los estado de la sesion.
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
-    async registerUser(email, password){
+    async registerUser(email, password, username){
         try {
             await createUserWithEmailAndPassword(auth, email, password)
+            .then(async (userCredential) => {
+                await this.UpdateUsername(userCredential, username)
+                await this.AddingUserToFirestore(userCredential)
+            })
+            
             this.Logout() // se cierra sesion porque al registrar un nuevo usuario, este queda logeado despues de registrar
         } catch (error) {
             switch (error.code) {
@@ -56,6 +67,32 @@ class UserStateManage extends Subject{
 
     async Logout(){
         await signOut(auth)
+    }
+
+    async AddingUserToFirestore(userCredential){
+        const user = userCredential.user
+        const { email, displayName , uid} = user
+        try {
+            await addDoc(collection(db, "users"), {
+                email: email,
+                displayName: displayName,
+                uid: uid,
+                role: user
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async UpdateUsername(userCredential, username){
+        const user = userCredential.user;
+        try {
+            return updateProfile(user, {
+                displayName: username
+            })
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 }

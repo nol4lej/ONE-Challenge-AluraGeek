@@ -9,7 +9,7 @@
 @import url("/src/css/login.css");
 @import url("/src/css/allbycategory.css");
 @import url("/src/css/register.css");
-
+@import url("/src/css/modal.css");
 
 :root{
 
@@ -20,6 +20,7 @@
     --color-gray-light: #A2A2A2;
     --bg-gray: #F5F5F5;
     --bg-gray-light: #F5F5F5;
+    --bg-gray-light-transparent: #f5f5f53b;
     --bg-blue-light: #EAF2FD;
     --border-input: #C8C8C8;
 

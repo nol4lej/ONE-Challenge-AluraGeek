@@ -1,5 +1,6 @@
-import { userStateManage } from "../controllers/users-manage.js"
-import { ContactFooter } from "./contactfooter.js"
+import { userStateManage } from "../../controllers/users-manage.js"
+// import { Modal } from "../helpers/modal.js"
+import { ContactFooter } from "../contactfooter.js"
 
 
 function loginEvent(){
@@ -10,9 +11,10 @@ function loginEvent(){
         const password = document.getElementById("login-password").value
         try {
             userStateManage.Login(email, password)
+            // Modal("Inicio de sesión exitoso")
             setTimeout(() => {
                 window.location.href = "#";
-            }, 1000);
+            }, 2000);
             
         } catch (error) {
             console.log(error)

@@ -1,5 +1,5 @@
-import { ClienteServices } from "../controllers/crud-controller.js";
-import { ContactFooter } from "./contactfooter.js";
+import { ClienteServices } from "../../controllers/crud-controller.js";
+import { ContactFooter } from "../contactfooter.js";
 
 function RenderProductByCategory(name, imageUrl, price, category){
     const nameUrl = name
