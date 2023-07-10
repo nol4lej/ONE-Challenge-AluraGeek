@@ -1,4 +1,4 @@
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
+import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
 import { onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"
 import { auth, db } from "./firebase.js"
 import { Subject } from "../helpers/subject.js"
@@ -77,7 +77,7 @@ class UserStateManage extends Subject{
                 email: email,
                 displayName: displayName,
                 uid: uid,
-                role: user
+                role: "user"
             })
         } catch (error) {
             console.log(error)
@@ -93,6 +93,22 @@ class UserStateManage extends Subject{
         } catch (error) {
             console.log(error)
         }
+    }
+
+    async
+
+
+
+    async GetUsersRole(currentUser){
+        const querySnapshot = await getDocs(collection(db, "users"));
+        let userRole;
+        querySnapshot.forEach((doc) => {
+            const { displayName, email, role, uid } = doc._document.data.value.mapValue.fields
+            if (uid.stringValue === currentUser.uid){
+                userRole = role.stringValue;
+            }
+        });
+        return userRole;
     }
 
 }

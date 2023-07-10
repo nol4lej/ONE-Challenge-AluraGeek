@@ -46,15 +46,17 @@ export async function Router(route){
 }
 
 class RouterObserver{
-
- notify(subject){
-    if(subject.users){
-        userState = true
+ async notify(subject){
+    try {
+        const currentUser = subject.users
+        const userRole = await subject.GetUsersRole(currentUser)
+        if(userRole === "administrator"){
+            userState = true
+        }
+    } catch (error) {
+        console.log("No user")
     }
-    
-
  }
-
 }
 
 const routerObserver = new RouterObserver()
