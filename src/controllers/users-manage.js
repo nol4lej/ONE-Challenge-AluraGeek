@@ -1,5 +1,5 @@
-import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"
-import { onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "./firebase.js"
 import { Subject } from "../helpers/subject.js"
 
@@ -96,8 +96,6 @@ class UserStateManage extends Subject{
     }
 
     async
-
-
 
     async GetUsersRole(currentUser){
         const querySnapshot = await getDocs(collection(db, "users"));

@@ -8,7 +8,7 @@ import { Register } from "../views/users/register.js";
 import { Panel } from "../views/panel/panel.js";
 import { userStateManage } from "../controllers/users-manage.js";
 
-let userState = false;
+let userAdmin = false;
 
 export async function Router(route){
     const root = document.getElementById("root")
@@ -33,7 +33,7 @@ export async function Router(route){
             document.startViewTransition(() => Panel())
             break
         case "#/panel/addproduct":
-            if(userState){
+            if(userAdmin){
                 document.startViewTransition(() => AddProduct())
             } else {
                 window.location.href = "#";
@@ -51,7 +51,7 @@ class RouterObserver{
         const currentUser = subject.users
         const userRole = await subject.GetUsersRole(currentUser)
         if(userRole === "administrator"){
-            userState = true
+            userAdmin = true
         }
     } catch (error) {
         console.log("No user")

@@ -50,9 +50,12 @@ class Products extends Subject{
 
     getProduct(id) {
         const allProducts = this.getAllProducts();
-        const product = allProducts.find(product => product.id === id);
-        console.log(product)
-        return product;
+        const foundProduct = allProducts.find(product => {
+            product.id === id
+            console.log(product.id)
+        });
+        console.log(foundProduct)
+
       }
 
 }
@@ -70,4 +73,4 @@ products.suscribe(productsObserver)
 products.FetchProducts()
 // console.log(products.productsByCategory)
 console.log(products.getAllProducts())
-console.log(products.getProduct("9eaa1a1e-8628-4cbf-a3a3-6d2d0b3e1c9e"))
+console.log(products.getProduct("e0ea324b-356a-4423-a619-09338941354b"))

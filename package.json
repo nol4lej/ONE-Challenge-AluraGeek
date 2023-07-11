@@ -2,12 +2,22 @@
   "name": "challenge-alurageek",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "dependencies": {
+    "webpack": "^5.88.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "firebase": "^10.0.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "style-loader": "^3.3.3"
+  }
 }

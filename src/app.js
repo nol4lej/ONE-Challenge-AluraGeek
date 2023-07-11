@@ -1,5 +1,5 @@
-import { Router } from "./src/router/router.js";
-import { Loading } from "./src/helpers/loading.js";
+import { Router } from "./router/router.js";
+import { Loading } from "./helpers/loading.js";
 
 export function App(){
     Loading();
