@@ -5,7 +5,7 @@ export function ContactFooter(){
         <div class="contact">
             <div class="links__container">
                 <div class="footer__logo">
-                    <img class="contact__img" src="/src/img/logo.png" alt="">
+                    <img class="contact__img" src="../img/logo.png" alt="">
                 </div>
                 <div class="footer__links">
                     <ul class="links__list">

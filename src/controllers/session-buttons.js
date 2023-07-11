@@ -1,8 +1,8 @@
-import { userStateManage } from "./users-manage.js"
+import { user } from "./users-handle.js"
 
-class AuthStateObserver{
+class UsersObserver{
     notify(subject){
-        if(subject.users){
+        if(subject.user){
             document.getElementById("btn-login").style.display = "none"
             document.getElementById("btn-reg").style.display = "none"
             document.getElementById("btn-logout").style.display = "flex"
@@ -15,5 +15,6 @@ class AuthStateObserver{
         }
     }
 }
-const authStateObserver = new AuthStateObserver()
-userStateManage.suscribe(authStateObserver)
+
+const userObserver = new UsersObserver()
+user.suscribe(userObserver)

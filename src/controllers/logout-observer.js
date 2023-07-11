@@ -1,4 +1,4 @@
-import { userStateManage } from "./users-manage.js"
+import { user } from "./users-handle.js"
 
 class AuthStateLogoutObserver{
     notify(){
@@ -6,7 +6,7 @@ class AuthStateLogoutObserver{
         nav_logout.addEventListener("click", async (event) => {
             event.preventDefault()
             try {
-                userStateManage.Logout()
+                user.logout()
                 window.location.href = "#";
             } catch (error) {
                 console.log(error)
@@ -17,4 +17,4 @@ class AuthStateLogoutObserver{
 }
 
 const authStateLogoutObserver = new AuthStateLogoutObserver()
-userStateManage.suscribe(authStateLogoutObserver)
+user.suscribe(authStateLogoutObserver)

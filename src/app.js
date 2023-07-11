@@ -1,7 +1,13 @@
 import { Router } from "./router/router.js";
 import { Loading } from "./helpers/loading.js";
+import { user } from "./controllers/users-handle.js";
+
+
 
 export function App(){
+
+    user.loginState()
+
     Loading();
     setTimeout(() => {
         Router(window.location.hash)

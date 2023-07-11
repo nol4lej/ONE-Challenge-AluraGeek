@@ -22,4 +22,10 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({
         template: './src/index.html',
     })],
+    // no incluir un polyfill para el módulo crypto. Esto para poder incluir bcryptjs
+    resolve: {
+        fallback: {
+          "crypto": false
+        }
+    }
 }

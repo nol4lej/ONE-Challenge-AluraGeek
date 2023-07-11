@@ -1,20 +1,31 @@
-import { userStateManage } from "../../controllers/users-manage.js";
+import { user } from "../../controllers/users-handle.js";
 import { ContactFooter } from "../contactfooter.js"
 
 function registerEvent(){
     const btn = document.getElementById("register-form")
     btn.addEventListener("submit", async (event) => {
         event.preventDefault()
+        const username = document.getElementById("register-username").value
         const email = document.getElementById("register-email").value
         const password = document.getElementById("register-password").value
-        const username = document.getElementById("register-username").value
+        const info = document.getElementById("register-info")
         try {
-            userStateManage.registerUser(email, password, username)
+            await user.register(username, email, password)
             setTimeout(() => {
                 window.location.href = "#";
             }, 1000);
         } catch (error) {
-            console.log(error)
+            // error devuelve un array con el usuario y/o email existente.
+            if(error.length > 1){
+                info.innerHTML = `
+                ${error[0]} y ${error[1]} ya existen.
+                `
+            } else {
+                info.innerHTML = `
+                ${error[0]} ya existe.
+                `
+            }
+
         }
     })
 }
@@ -39,6 +50,7 @@ export function Register(){
                 </div>
                 <button type="submit" class="register__button__form">Entrar</button>
             </form>
+            <span id="register-info"></span>
         </div>
     `
     registerEvent();

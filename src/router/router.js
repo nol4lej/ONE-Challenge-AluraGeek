@@ -6,7 +6,7 @@ import { ViewProduct } from "../views/products/viewproduct.js";
 import { AddProduct } from "../views/products/addproduct.js";
 import { Register } from "../views/users/register.js";
 import { Panel } from "../views/panel/panel.js";
-import { userStateManage } from "../controllers/users-manage.js";
+import { user } from "../controllers/users-handle.js";
 
 let userAdmin = false;
 
@@ -46,18 +46,17 @@ export async function Router(route){
 }
 
 class RouterObserver{
- async notify(subject){
-    try {
-        const currentUser = subject.users
-        const userRole = await subject.GetUsersRole(currentUser)
-        if(userRole === "administrator"){
-            userAdmin = true
+    async notify(subject){
+        if(subject.user){
+            const user = subject.user
+            if(user.role === "admin"){
+                userAdmin = true
+            }
+        } else {
+            userAdmin = false
         }
-    } catch (error) {
-        console.log("No user")
     }
- }
 }
 
 const routerObserver = new RouterObserver()
-userStateManage.suscribe(routerObserver)
+user.suscribe(routerObserver)
