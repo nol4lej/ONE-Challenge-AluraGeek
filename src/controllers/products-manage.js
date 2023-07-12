@@ -6,6 +6,7 @@ class Products extends Subject{
         super();
         this.products = []
         this.productsByCategory = {}
+        this.randomProducts = []
     }
 
     notify(product){
@@ -38,8 +39,24 @@ class Products extends Subject{
         // this.productsByCategory[category].push(producto);
     }
 
-    RandomProductsByCategory(){
-        return this.productsByCategory
+    RandomProductsByCategory(category, currentProduct){
+        this.randomProducts = [] // reinicio el array, sino se acumulan los random products de cada view
+        let contador = 0
+        let maxContador = 6
+        const currentCategory = this.productsByCategory[category]
+        if(currentCategory.length < 7){
+            maxContador = currentCategory.length - 1 // agrego -1 para descontar el currentProduct
+        }
+        while(contador !== maxContador){
+            const RandomIndex = Math.floor(Math.random() * currentCategory.length);
+            const ProductSelect = currentCategory[RandomIndex]
+
+            if(!this.randomProducts.includes(ProductSelect) && ProductSelect !== currentProduct){
+                this.randomProducts.push(ProductSelect)
+                contador++
+            }
+        }
+        return this.randomProducts
     }
 
     getAllProductsByCategory(){
@@ -50,10 +67,11 @@ class Products extends Subject{
         return this.products
     }
 
-    getProduct(id) {
-        const foundProduct = this.products.find((product) => product.id === id);
-        console.log(foundProduct);
-      }
+    getProduct(currentId) {
+        const productos = products.getAllProducts()
+        const foundProduct = productos.find(element => element.id === currentId)
+        return foundProduct
+    }
 
 }
 
@@ -69,4 +87,3 @@ products.suscribe(productsObserver)
 
 products.FetchProducts()
 
-console.log(products.getProduct("e0ea324b-356a-4423-a619-09338941354b"))

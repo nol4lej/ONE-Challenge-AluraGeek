@@ -44,7 +44,13 @@ export async function Router(route){
             }
             break    
         default:
-            await document.startViewTransition(() => ViewProduct(route));
+            try {
+                await document.startViewTransition(() => ViewProduct(route));
+            } catch (error) {
+                console.log("buu")
+                document.startViewTransition(() => Error());
+            }
+            
             break;
     }
 }
