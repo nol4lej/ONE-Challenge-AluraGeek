@@ -16,24 +16,23 @@ class Products extends Subject{
     FetchProducts(){
         fetch("http://localhost:3000/productos")
         .then(res => res.json())
-        .then(productos => {
-            productos.forEach(producto => {
-                this.notify(producto)
-                this.DistributedCategory(producto)
+        .then(products => {
+            products.forEach(product => {
+                this.notify(product)
+                this.DistributedCategory(product)
             });
         })
         .catch(error => console.log(error))
     }
 
-    DistributedCategory(producto){
-        const category = producto.category;
+    DistributedCategory(product){
+        const category = product.category;
         if (!this.productsByCategory.hasOwnProperty(category)) {
             this.productsByCategory[category] = []; // Asigna un array vacío como valor para la nueva categoría
-            this.productsByCategory[category].push(producto) // agrega el producto con el que estamos verificando la categoria
+            this.productsByCategory[category].push(product) // agrega el producto con el que estamos verificando la categoria
         } else {
-            this.productsByCategory[category].push(producto) // agrega los productos en las categorias existentes
+            this.productsByCategory[category].push(product) // agrega los productos en las categorias existentes
         }
-
         // Manera simplificada de realizar lo mismo:
         // this.productsByCategory[category] = this.productsByCategory[category] || [];
         // this.productsByCategory[category].push(producto);
