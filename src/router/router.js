@@ -1,12 +1,16 @@
-import { Main } from "../views/main.js";
+import { user } from "../controllers/users-handle.js";
 import { Error } from "../views/error.js";
+
+import { Main } from "../views/main.js";
+
 import { Login } from "../views/users/login.js";
+import { Register } from "../views/users/register.js";
+
 import { ProductsByCategory } from "../views/products/allbycategory.js";
 import { ViewProduct } from "../views/products/viewproduct.js";
 import { AddProduct } from "../views/products/addproduct.js";
-import { Register } from "../views/users/register.js";
+
 import { Panel } from "../views/panel/panel.js";
-import { user } from "../controllers/users-handle.js";
 
 let userAdmin = false;
 

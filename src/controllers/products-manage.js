@@ -39,7 +39,7 @@ class Products extends Subject{
     }
 
     RandomProductsByCategory(){
-        
+        return this.productsByCategory
     }
 
     getAllProductsByCategory(){

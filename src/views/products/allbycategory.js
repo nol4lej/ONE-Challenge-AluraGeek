@@ -1,37 +1,12 @@
-import { ClienteServices } from "../../controllers/crud-controller.js";
 import { products } from "../../controllers/products-manage.js";
 import { ContactFooter } from "../contactfooter.js";
 
-
-class AllByCategoryProductsObserver{
-
-    constructor(){
-        this.products = []
-    }
-
-    notify(subject){
-        this.filtredProducts(subject)
-    }
-
-    filtredProducts(product){
-        const category = product.category;
-        if(!this.products.hasOwnProperty(category)){
-            this.products[category] = []
-            this.products[category].push(product)
-        } else {
-            this.products[category].push(product)
-        }
-    }
-
-}
-const allByCategoryProductsObserver = new AllByCategoryProductsObserver()
-products.suscribe(allByCategoryProductsObserver)
-
-function RenderProductByCategory(ObserverProps, category){
+function RenderProductByCategory(category){
+    const productosByCategory = products.getAllProductsByCategory()
     const currentCategory = category.substring(2) // Obtener desde la tercera posición en adelante, asi eliminar "#/" del string
-    const categories = ObserverProps.products
-    if(categories.hasOwnProperty(currentCategory)){
-        const arrayWithProducts = categories[currentCategory]
+
+    if(productosByCategory.hasOwnProperty(currentCategory)){
+        const arrayWithProducts = productosByCategory[currentCategory]
         arrayWithProducts.forEach(product => {
             const { name, imageUrl, price, description, id, category} = product
 
@@ -52,7 +27,7 @@ function RenderProductByCategory(ObserverProps, category){
                 <div class="bycategory__info">
                     <h3 class="bycategory__title">${name}</h3>
                     <p class="bycategory__price">${price}</p>
-                    <a class="bycategory__link" href="#/${nameUrl}">Ver Producto</a>
+                    <a class="bycategory__link" href="#/?id=${id}&name=${nameUrl}">Ver Producto</a>
                 </div>
             `
             father.appendChild(article)
@@ -73,6 +48,6 @@ export function ProductsByCategory(category){
     </section>
     
     `
-    RenderProductByCategory(allByCategoryProductsObserver, category)
+    RenderProductByCategory(category)
     ContactFooter()
 }

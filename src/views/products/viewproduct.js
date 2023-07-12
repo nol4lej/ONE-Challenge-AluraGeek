@@ -1,5 +1,8 @@
 import { ClienteServices } from "../../controllers/crud-controller.js";
+import { products } from "../../controllers/products-manage.js";
 import { Error } from "../error.js";
+
+console.log(products.RandomProductsByCategory())
 
 export function ViewProduct(route){
     const completeUrl = new URL(`http://127.0.0.1:8080/${route}`).href
