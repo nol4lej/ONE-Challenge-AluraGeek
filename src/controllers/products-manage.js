@@ -10,7 +10,7 @@ class Products extends Subject{
 
     notify(product){
         this.products.push(product)
-        super.notify(this)
+        super.notify(product) // se notifica solo el producto agregado
     }
 
     FetchProducts(){
@@ -18,7 +18,6 @@ class Products extends Subject{
         .then(res => res.json())
         .then(productos => {
             productos.forEach(producto => {
-                // console.log(producto)
                 this.notify(producto)
                 this.DistributedCategory(producto)
             });
@@ -44,18 +43,17 @@ class Products extends Subject{
         
     }
 
+    getAllProductsByCategory(){
+        return this.productsByCategory
+    }
+
     getAllProducts(){
         return this.products
     }
 
     getProduct(id) {
-        const allProducts = this.getAllProducts();
-        const foundProduct = allProducts.find(product => {
-            product.id === id
-            console.log(product.id)
-        });
-        console.log(foundProduct)
-
+        const foundProduct = this.products.find((product) => product.id === id);
+        console.log(foundProduct);
       }
 
 }
@@ -71,6 +69,5 @@ export const products = new Products();
 products.suscribe(productsObserver)
 
 products.FetchProducts()
-// console.log(products.productsByCategory)
-console.log(products.getAllProducts())
+
 console.log(products.getProduct("e0ea324b-356a-4423-a619-09338941354b"))
