@@ -18,7 +18,6 @@ function RandomProducts(category, currentProduct){
     const productos = products.RandomProductsByCategory(category, currentProduct)
 
     const container = document.getElementById("random-products")
-    const productsContainer = document.createElement("div")
 
     productos.forEach(product => {
         const { name, imageUrl, price, id} = product
@@ -26,20 +25,20 @@ function RandomProducts(category, currentProduct){
         const nameUrl = OptimizedUrl(name)
         
         const divProduct = document.createElement("div")
+        divProduct.classList.add("random__item")
         divProduct.innerHTML = `
-            <div class="bycategory__img__container">
-                <img class="bycategory__img" src="${imageUrl}" alt="">
+            <div class="random__img__container">
+                <img class="random__img" src="${imageUrl}" alt="">
+                <h3 class="random__title">${name}</h3>
             </div>
-            <div class="bycategory__info">
-                <h3 class="bycategory__title">${name}</h3>
-                <p class="bycategory__price">${price}</p>
-                <a class="bycategory__link" href="#/?id=${id}&name=${nameUrl}">Ver Producto</a>
+            <div class="random__info">
+                
+                <p class="random__price">${price}</p>
+                <a class="random__link" href="#/?id=${id}&name=${nameUrl}">Ver Producto</a>
             </div>
         `
-        productsContainer.appendChild(divProduct)
+        container.appendChild(divProduct)
     })
-
-    container.appendChild(productsContainer)
 
 }
 
