@@ -1,4 +1,4 @@
-import { ContactFooter } from "./contactfooter.js";
+import { ContactFooter } from "../components/contactfooter.js";
 
 export function Error(){
     const root = document.getElementById("root");

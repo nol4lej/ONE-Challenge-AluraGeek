@@ -1,5 +1,5 @@
 import { user } from "../../controllers/users-handle.js"
-import { ContactFooter } from "../contactfooter.js"
+import { ContactFooter } from "../../components/contactfooter.js"
 
 
 function loginEvent(){

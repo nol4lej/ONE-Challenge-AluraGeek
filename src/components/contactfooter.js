@@ -1,5 +1,4 @@
 export function ContactFooter(){
-    const root = document.getElementById("root")
     const conFoo = document.createElement("section")
     conFoo.innerHTML = `
         <div class="contact">
@@ -35,5 +34,5 @@ export function ContactFooter(){
             <h2 class="footer__title">Desarrollado por Nolasco Medina 2023</h2>
         </footer>
     `;
-    root.appendChild(conFoo);
+    return conFoo
 };

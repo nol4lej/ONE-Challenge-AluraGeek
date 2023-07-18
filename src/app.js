@@ -1,5 +1,5 @@
 import { Router } from "./router/router.js";
-import { Loading } from "./helpers/loading.js";
+import { Loading } from "../src/components/loading.js";
 import { user } from "./controllers/users-handle.js";
 
 

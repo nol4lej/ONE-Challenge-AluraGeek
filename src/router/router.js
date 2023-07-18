@@ -20,7 +20,8 @@ export async function Router(route){
     switch (route) {
         case "#/":
         case "":
-            document.startViewTransition(() => Main())
+            // document.startViewTransition(() => Main())
+            root.innerHTML = await Main()
             break;
         case "#/login":
             document.startViewTransition(() => Login())

@@ -1,5 +1,5 @@
 import { products } from "../../controllers/products-manage.js";
-import { ContactFooter } from "../contactfooter.js";
+import { ContactFooter } from "../../components/contactfooter.js";
 import { OptimizedUrl } from "../../helpers/optimized-url.js"
 
 function RenderProductByCategory(category){

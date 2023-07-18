@@ -1,6 +1,6 @@
 import { products } from "../../controllers/products-manage.js";
 import { OptimizedUrl } from "../../helpers/optimized-url.js";
-import { ContactFooter } from "../contactfooter.js";
+import { ContactFooter } from "../../components/contactfooter.js";
 import { Error } from "../error.js";
 
 
