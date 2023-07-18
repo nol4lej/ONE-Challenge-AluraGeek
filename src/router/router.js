@@ -1,5 +1,5 @@
 import { user } from "../controllers/users-handle.js";
-import { Error } from "../views/error.js";
+import { Error404 } from "../views/error.js";
 
 import { Main } from "../views/main.js";
 
@@ -14,46 +14,79 @@ import { Panel } from "../views/panel/panel.js";
 
 let userAdmin = false;
 
-export async function Router(route){
+function hashValidation(hash){
+    const params = new URLSearchParams(hash.slice(2));
+    const id = params.get("id");
+    return id
+}
+
+const pages = {
+    404: Error404,
+    "": Main,
+    "#/": Main,
+    "#/login": Login,
+    "#/register": Register
+}
+
+export async function Router(hash){
     const root = document.getElementById("root")
     root.innerHTML = ""
-    switch (route) {
-        case "#/":
-        case "":
-            // document.startViewTransition(() => Main())
-            root.innerHTML = Main()
-            break;
-        case "#/login":
-            document.startViewTransition(() => Login())
-            break;
-        case "#/register":
-            document.startViewTransition(() => Register())
-            break;
-        case "#/starwars":
-        case "#/consola":
-        case "#/otros":
-            document.startViewTransition(() => ProductsByCategory(route))
-            break;
-        case "#/panel":
-            document.startViewTransition(() => Panel())
-            break
-        case "#/panel/addproduct":
-            if(userAdmin){
-                document.startViewTransition(() => AddProduct())
-            } else {
-                window.location.href = "#";
-            }
-            break    
-        default:
-            try {
-                await document.startViewTransition(() => ViewProduct(route));
-            } catch (error) {
-                console.log("buu")
-                document.startViewTransition(() => Error());
-            }
-            
-            break;
+
+    const route = pages[hash] || pages[404]
+    
+    if(hashValidation(hash)){
+        const id = hashValidation(hash)
+        root.innerHTML = await ViewProduct(id)
+    } else {
+        root.innerHTML = route()
     }
+
+    // if(typeof route === "function"){
+    //     root.innerHTML = route()
+    // }
+
+    
+
+
+    // switch (route) {
+    //     case "#/":
+    //     case "":
+    //         // document.startViewTransition(() => Main())
+    //         root.innerHTML = Main()
+    //         break;
+    //     case "#/login":
+    //         // document.startViewTransition(() => Login())
+    //         root.innerHTML = Login()
+    //         break;
+    //     case "#/register":
+    //         // document.startViewTransition(() => Register())
+    //         root.innerHTML = Register()
+    //         break;
+    //     case "#/starwars":
+    //     case "#/consola":
+    //     case "#/otros":
+    //         document.startViewTransition(() => ProductsByCategory(route))
+    //         break;
+    //     case "#/panel":
+    //         document.startViewTransition(() => Panel())
+    //         break
+    //     case "#/panel/addproduct":
+    //         if(userAdmin){
+    //             document.startViewTransition(() => AddProduct())
+    //         } else {
+    //             window.location.href = "#";
+    //         }
+    //         break    
+    //     default:
+    //         try {
+    //             await document.startViewTransition(() => ViewProduct(route));
+    //         } catch (error) {
+    //             console.log("buu")
+    //             document.startViewTransition(() => Error());
+    //         }
+            
+    //         break;
+    // }
 }
 
 class RouterObserver{

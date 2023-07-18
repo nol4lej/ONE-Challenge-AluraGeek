@@ -6,6 +6,13 @@
       "password": "$2a$10$q90TgArW7AG4IevqbTZ2GO7sWEjCwJro3ne.XeICRvAQKo6l9LsKy",
       "role": "admin",
       "id": "9f8fe61d-62a2-4c13-928e-481cf12e1e86"
+    },
+    {
+      "name": "Admin",
+      "email": "admin@admin.com",
+      "password": "$2a$10$yRpDfxGR2vdqFRRk32f3huVoNIm7TFfHnjygO7bpGsx55Ia8fGd.C",
+      "role": "user",
+      "id": "52b2f29a-1622-4b6b-a7b1-4a4eb73e9a1c"
     }
   ],
   "categories": [

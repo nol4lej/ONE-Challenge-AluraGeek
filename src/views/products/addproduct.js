@@ -1,5 +1,3 @@
-import { ContactFooter } from "../../components/contactfooter.js"
-
 export function AddProduct(){
     const root = document.getElementById("root")
     root.innerHTML = `
@@ -29,8 +27,8 @@ export function AddProduct(){
             </form>
         </div>
     </section>
+
+    <contact-footer></contact-footer>
     
     `
-    ContactFooter()
-
 }

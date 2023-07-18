@@ -1,5 +1,4 @@
 import { products } from "../../controllers/products-manage.js";
-import { ContactFooter } from "../../components/contactfooter.js";
 import { OptimizedUrl } from "../../helpers/optimized-url.js"
 
 function RenderProductByCategory(category){
@@ -42,8 +41,7 @@ export function ProductsByCategory(category){
         </div>
         <div class="bycategory__container" id="bycategory"></div>
     </section>
-    
+    <contact-footer></contact-footer>
     `
     RenderProductByCategory(category)
-    ContactFooter()
 }
