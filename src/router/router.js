@@ -25,7 +25,10 @@ const pages = {
     "": Main,
     "#/": Main,
     "#/login": Login,
-    "#/register": Register
+    "#/register": Register,
+    "#/starwars": ProductsByCategory,
+    "#/consola": ProductsByCategory,
+    "#/otros": ProductsByCategory
 }
 
 export async function Router(hash){
@@ -36,9 +39,9 @@ export async function Router(hash){
     
     if(hashValidation(hash)){
         const id = hashValidation(hash)
-        root.innerHTML = await ViewProduct(id)
+        root.innerHTML = ViewProduct(id)
     } else {
-        root.innerHTML = route()
+        root.innerHTML = route(hash)
     }
 
     // if(typeof route === "function"){
