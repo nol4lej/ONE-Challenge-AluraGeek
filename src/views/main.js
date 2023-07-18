@@ -1,11 +1,7 @@
-import { ContactFooter } from "../components/contactfooter.js";
 import { filterProducts } from "../helpers/main-products.js"
 
 export function Main(){
     const arrayProductos = filterProducts()
-
-    // outerHTML es un metodo que convierte el objeto HTML a una cadena de texto
-    const footer = ContactFooter().outerHTML
 
     const main =`
         <header class="header">
@@ -41,7 +37,8 @@ export function Main(){
                 <div class="items" id="otros">${arrayProductos[2][1]}</div>
             </article>
         </section>
-        ${footer}
+        
+        <contact-footer></contact-footer>
 
     `;
     return main;
