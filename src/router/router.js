@@ -26,6 +26,7 @@ const pages = {
     "#/": Main,
     "#/login": Login,
     "#/register": Register,
+    "#/addproduct": AddProduct,
     "#/starwars": ProductsByCategory,
     "#/consola": ProductsByCategory,
     "#/otros": ProductsByCategory
@@ -40,16 +41,11 @@ export async function Router(hash){
     if(hashValidation(hash)){
         const id = hashValidation(hash)
         root.innerHTML = ViewProduct(id)
-    } else {
+    } else if(hash === "#/starwars" || hash === "#/consola" || hash === "#/otros"){
         root.innerHTML = route(hash)
-    }
-
-    // if(typeof route === "function"){
-    //     root.innerHTML = route()
-    // }
-
-    
-
+    } else{
+        root.innerHTML = route()
+    }    
 
     // switch (route) {
     //     case "#/":

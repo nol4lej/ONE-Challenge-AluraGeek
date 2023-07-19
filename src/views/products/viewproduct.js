@@ -1,5 +1,5 @@
 import { products } from "../../controllers/products-manage.js";
-import { RandomProducts } from "../../helpers/random-products.js";
+import { RandomProducts } from "../../helpers/products/random-products.js";
 
 export function ViewProduct(id){
     const product = products.getProduct(id)

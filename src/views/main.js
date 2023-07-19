@@ -1,4 +1,4 @@
-import { filterProducts } from "../helpers/main-products.js"
+import { filterProducts } from "../helpers/products/main-products.js"
 
 export function Main(){
     const arrayProductos = filterProducts()
@@ -18,7 +18,7 @@ export function Main(){
                     <h2 class="products__title">Star Wars</h2>
                     <a href="#/starwars" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
                 </div>
-                <div class="items" id="starwars">${arrayProductos[0][1]}</div>
+                <div class="items" id="starwars">${arrayProductos?.length > 0 ? arrayProductos[0][1] : "No hay productos disponibles"}</div>
             </article>
 
             <article class="products">
@@ -26,7 +26,7 @@ export function Main(){
                     <h2 class="products__title">Consolas</h2>
                     <a href="#/consola" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
                 </div>
-                <div class="items" id="consola">${arrayProductos[1][1]}</div>
+                <div class="items" id="consola">${arrayProductos?.length > 0 ? arrayProductos[1][1] : "No hay productos disponibles"}</div>
             </article>
 
             <article class="products">
@@ -34,7 +34,7 @@ export function Main(){
                     <h2 class="products__title">Otros</h2>
                     <a href="#/otros" class="products__link">Ver todo <i class="material-icons">arrow_forward</i></a>
                 </div>
-                <div class="items" id="otros">${arrayProductos[2][1]}</div>
+                <div class="items" id="otros">${arrayProductos?.length > 0 ? arrayProductos[2][1] : "No hay productos disponibles"}</div>
             </article>
         </section>
         

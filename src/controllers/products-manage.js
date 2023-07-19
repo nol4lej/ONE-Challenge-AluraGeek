@@ -1,3 +1,5 @@
+import { fetchGet } from "../helpers/fetch-get.js";
+import { fetchPost } from "../helpers/fetch-post.js";
 import { Subject } from "../helpers/subject.js"
 
 class Products extends Subject{
@@ -5,7 +7,7 @@ class Products extends Subject{
     constructor(){
         super();
         this.products = []
-        this.productsByCategory = {}
+        // this.productsByCategory = {}
         this.randomProducts = []
     }
 
@@ -14,16 +16,19 @@ class Products extends Subject{
         super.notify(product) // se notifica solo el producto agregado
     }
 
-    FetchProducts(){
-        fetch("http://localhost:3000/productos")
-        .then(res => res.json())
-        .then(products => {
-            products.forEach(product => {
+    async FetchProducts(){
+        try {
+            const respuesta = await fetchGet()
+            this.products = [];
+            this.productsByCategory = {}
+
+            respuesta.forEach(product => {
                 this.notify(product)
                 this.DistributedCategory(product)
             });
-        })
-        .catch(error => console.log(error))
+        } catch (error) {
+            throw new Error(error)
+        }
     }
 
     DistributedCategory(product){
@@ -51,6 +56,7 @@ class Products extends Subject{
             const RandomIndex = Math.floor(Math.random() * currentCategory.length);
             const ProductSelect = currentCategory[RandomIndex]
 
+            // compruebar que el producto random exista y que el pructo random no sea el mismo de la vista
             if(!this.randomProducts.includes(ProductSelect) && ProductSelect !== currentProduct){
                 this.randomProducts.push(ProductSelect)
                 contador++
@@ -71,6 +77,16 @@ class Products extends Subject{
         const productos = products.getAllProducts()
         const foundProduct = productos.find(element => element.id === currentId)
         return foundProduct
+    }
+
+    async addProduct(data){
+        try {
+            await fetchPost(data)
+            this.FetchProducts() // actualiza los array de productos
+        } catch (error) {
+            throw new Error(error)
+        }
+        
     }
 
 }

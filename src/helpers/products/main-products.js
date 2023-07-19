@@ -1,8 +1,14 @@
-import { products } from "../controllers/products-manage.js";
-import { OptimizedUrl } from "../helpers/optimized-url.js";
-import { productCard } from "../components/product-card.js"
+import { products } from "../../controllers/products-manage.js";
+import { OptimizedUrl } from "../optimized-url.js";
+import { productCard } from "../../components/product-card.js"
 
 export const filterProducts = () => {
+
+    // comprobar si hay productos 
+    if(!products.getAllProductsByCategory()){
+        return
+    }
+    
     // recibo un objeto con las categorias y sus productos
     const prods = products.getAllProductsByCategory()
 
