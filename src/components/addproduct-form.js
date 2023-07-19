@@ -14,41 +14,41 @@ export class AddProductForm extends HTMLElement{
 
     render(){
         this.innerHTML = `
-        <section class="">
-            <div class="">
+        <section class="addform__container">
+            <div class="add__title">
                 <h2>Agregar nuevo producto</h2>
+                <a href="" class="add__back"><i class="material-icons">arrow_back</i>Volver</a>
             </div>
-            <div class="">
-                <form id="addproduct-form">
-                    <div class="">
-                        <label for="">URL de la imagen</label>
-                        <input type="text" id="img-input">
-                    </div>
-                    <div class="">
-                    <label for="">Nombre del producto</label>
-                        <input type="text" id="name-input">
-                    </div>
-                    <div class="">
-                        <label for="">Categoría</label>
-                        <select id="categoria">
-                            <option value="starwars">Star Wars</option>
-                            <option value="consola">Consola</option>
-                            <option value="otros">Otros</option>
-                        </select>
-                    </div>
-                    <div class="">
-                        <label for="">Precio del producto</label>
-                        <p>$<input type="number" id="price-input"></p>
-                    </div>
-                    <div class="">
-                        <label for="">Descripción del producto</label>
-                        <input type="text" id="description-input">
-                    </div>
-                    <button type="submit">Agregar producto</button>
-                </form>
-            </div>
+            <form id="addproduct-form" class="add__form">
+                <div class="add__img">
+                    <label for="" class="img__label">URL de la imagen</label>
+                    <input type="text" id="img-input" class="img__input">
+                </div>
+                <div class="add__name">
+                <label for="" class="name__label">Nombre del producto</label>
+                    <input type="text" id="name-input" class="name__input">
+                </div>
+                <div class="add__category">
+                    <label for="" class="categoria__label">Categoría</label>
+                    <select id="categoria" class="categoria__input">
+                        <option value="starwars">Star Wars</option>
+                        <option value="consola">Consola</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                <div class="add__price">
+                    <label for="" class="price__label">Precio del producto</label>
+                    <p class="container__number">$<input type="number" id="price-input" class="price__input"></p>
+                </div>
+                <div class="add__description">
+                    <label for="" class="description__label">Descripción del producto</label>
+                    <input type="text" id="description-input" class="description__input">
+                </div>
+                <button type="submit" class="add__btn">Agregar producto</button>
+            </form>
             <span id="message"></span>
         </section>
+
         `;
     }
 

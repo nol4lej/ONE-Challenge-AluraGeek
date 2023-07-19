@@ -34,60 +34,6 @@
     font-size: 16px;
 }
 
-/* ITEMS ITEMS ITEMS ITEMS */
-
-.items {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 16px;
-    gap: 16px;
-    justify-content: center;
-}
-
-.item {
-    width: 144px;
-    padding-bottom: 16px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    gap: 8px;
-}
-
-.item__img__container{
-    height: 174px;
-}
-
-.item__img{
-    width: 100%;
-    height: 174px;
-    object-fit: cover;
-}
-
-.item__info{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: 100%;
-}
-
-.item__price{
-    color: var(--color-gray);
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.item__link{
-    color: var(--color-blue);
-    font-size: 16px;
-    font-weight: 700;
-}
-
-
-@media screen and (min-width: 512px) {
-    .items{
-        justify-content: flex-start;
-    }
-}
 
 @media screen and (min-width: 768px) {
 

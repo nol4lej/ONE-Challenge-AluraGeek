@@ -12,6 +12,9 @@
 @import url("/src/css/modal.css");
 @import url("/src/css/viewproduct.css");
 
+@import url("/src/css/product-card.css");
+@import url("/src/css/addproduct.css");
+
 :root{
 
     --color-white: #FFFFFF;
