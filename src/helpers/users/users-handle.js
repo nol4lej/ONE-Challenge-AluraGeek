@@ -1,4 +1,4 @@
-import { Subject } from "../helpers/subject";
+import { Subject } from "../subject";
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcryptjs');
 

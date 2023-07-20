@@ -1,4 +1,4 @@
-import { user } from "../controllers/users-handle.js";
+import { user } from "../helpers/users/users-handle.js";
 import { Error404 } from "../views/error.js";
 
 import { Main } from "../views/main.js";

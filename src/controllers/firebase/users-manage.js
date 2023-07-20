@@ -1,7 +1,7 @@
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "./firebase.js"
-import { Subject } from "../helpers/subject.js"
+import { Subject } from "../../helpers/subject.js"
 
 class UserStateManage extends Subject{
     constructor(){

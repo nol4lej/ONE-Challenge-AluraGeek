@@ -1,4 +1,4 @@
-import { user } from "../controllers/users-handle.js"
+import { user } from "../helpers/users/users-handle.js"
 
 export class LoginForm extends HTMLElement{
 

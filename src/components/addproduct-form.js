@@ -1,4 +1,4 @@
-import { products } from "../controllers/products-manage.js";
+import { products } from "../helpers/products/products-manage.js";
 const { v4: uuidv4 } = require('uuid');
 
 export class AddProductForm extends HTMLElement{

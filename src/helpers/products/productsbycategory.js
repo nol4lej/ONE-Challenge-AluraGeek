@@ -1,5 +1,5 @@
 import { productCard } from "../../components/product-card.js";
-import { products } from "../../controllers/products-manage.js";
+import { products } from "./products-manage.js";
 import { OptimizedUrl } from "../optimized-url.js"
 
 export function RenderProductByCategory(category){

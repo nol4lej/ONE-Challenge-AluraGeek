@@ -1,4 +1,4 @@
-import { user } from "./users-handle.js"
+import { user } from "../helpers/users/users-handle.js"
 
 class LogoutObserver{
     notify(){

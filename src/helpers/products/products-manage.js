@@ -1,7 +1,7 @@
-import { fetchGet } from "../helpers/fetch-get.js";
-import { fetchPost } from "../helpers/fetch-post.js";
-import { Subject } from "../helpers/subject.js"
-import { fetchPersonalizedGet } from "../helpers/fetch-personalized-get.js"
+import { fetchGet } from "../fetch-get.js";
+import { fetchPost } from "../fetch-post.js";
+import { Subject } from "../subject.js"
+import { fetchPersonalizedGet } from "../fetch-personalized-get.js"
 
 class Products extends Subject{
 

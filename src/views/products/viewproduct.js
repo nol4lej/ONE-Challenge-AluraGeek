@@ -1,4 +1,4 @@
-import { products } from "../../controllers/products-manage.js";
+import { products } from "../../helpers/products/products-manage.js";
 import { RandomProducts } from "../../helpers/products/random-products.js";
 
 export async function ViewProduct(id){
