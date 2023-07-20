@@ -13,7 +13,8 @@
     gap: 16px;
 }
 
-.contact__img{
+.footer__logo{
+    background-image: url("/src/img/logo.png");
     width: 176px;
     height: 50px;
 }
