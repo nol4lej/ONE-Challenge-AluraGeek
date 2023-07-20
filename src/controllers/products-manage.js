@@ -1,19 +1,20 @@
 import { fetchGet } from "../helpers/fetch-get.js";
 import { fetchPost } from "../helpers/fetch-post.js";
 import { Subject } from "../helpers/subject.js"
+import { fetchPersonalizedGet } from "../helpers/fetch-personalized-get.js"
 
 class Products extends Subject{
 
     constructor(){
         super();
         this.products = []
-        // this.productsByCategory = {}
+        this.productsByCategory = {}
         this.randomProducts = []
     }
 
     notify(product){
         this.products.push(product)
-        super.notify(product) // se notifica solo el producto agregado
+        super.notify(this) // se notifica solo el producto agregado
     }
 
     async FetchProducts(){
@@ -22,6 +23,7 @@ class Products extends Subject{
             this.products = [];
             this.productsByCategory = {}
 
+            // const respuesta.length
             respuesta.forEach(product => {
                 this.notify(product)
                 this.DistributedCategory(product)
@@ -73,10 +75,9 @@ class Products extends Subject{
         return this.products
     }
 
-    getProduct(currentId) {
-        const productos = products.getAllProducts()
-        const foundProduct = productos.find(element => element.id === currentId)
-        return foundProduct
+    async getProduct(currentId) {
+        const res = await fetchPersonalizedGet(currentId)
+        return res
     }
 
     async addProduct(data){
@@ -91,15 +92,6 @@ class Products extends Subject{
 
 }
 
-class ProductsObserver{
-    notify(subject){
-        // console.log(subject)
-    }
-}
-
-const productsObserver = new ProductsObserver()
 export const products = new Products();
-products.suscribe(productsObserver)
-
 products.FetchProducts()
 

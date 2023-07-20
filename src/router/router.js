@@ -40,7 +40,7 @@ export async function Router(hash){
     
     if(hashValidation(hash)){
         const id = hashValidation(hash)
-        root.innerHTML = ViewProduct(id)
+        root.innerHTML = await ViewProduct(id)
     } else if(hash === "#/starwars" || hash === "#/consola" || hash === "#/otros"){
         root.innerHTML = route(hash)
     } else{

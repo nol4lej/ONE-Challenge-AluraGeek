@@ -1,8 +1,8 @@
 import { products } from "../../controllers/products-manage.js";
 import { RandomProducts } from "../../helpers/products/random-products.js";
 
-export function ViewProduct(id){
-    const product = products.getProduct(id)
+export async function ViewProduct(id){
+    const product = await products.getProduct(id)
     const { name, imageUrl, price, description, category} = product
 
     const arrayProducts = RandomProducts(category, product)

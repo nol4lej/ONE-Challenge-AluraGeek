@@ -2,6 +2,15 @@ import { products } from "../../controllers/products-manage.js";
 import { OptimizedUrl } from "../optimized-url.js";
 import { productCard } from "../../components/product-card.js"
 
+class ProductsObserver{
+    notify(subject){
+        console.log(subject.productsByCategory)
+    }
+}
+
+const productsObserver = new ProductsObserver()
+products.suscribe(productsObserver)
+
 export const filterProducts = () => {
 
     // comprobar si hay productos 
