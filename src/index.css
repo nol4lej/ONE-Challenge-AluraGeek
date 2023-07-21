@@ -1,0 +1,44 @@
+/* RESET */
+@import url("/src/helpers/reset.css");
+
+/* MAIN */
+@import url("/src/components/main/main.css");
+
+/* NAV */
+@import url("/src/components/nav/nav.css");
+
+/* HEADER */
+@import url("/src/components/header/header.css");
+
+/* PRODUCT CARD */
+@import url("/src/components/product-card/product-card.css");
+
+/* SINGLE PRODUCT */
+@import url("/src/components/single-product/single-product.css");
+
+/* RANDOM PRODUCTS */
+@import url("/src/components/random-products/random-products.css");
+
+/* ALL PRODUCTS BY CATEGORY */
+@import url("/src/components/all-products-category/allbycategory.css");
+
+:root{
+    --color-white: #FFFFFF;
+    --color-blue: #2A7AE4;
+    --color-blue-bold: #1b5198;
+    --color-gray: #464646;
+    --color-gray-light: #A2A2A2;
+    --bg-gray: #F5F5F5;
+    --bg-gray-light: #F5F5F5;
+    --bg-gray-light-transparent: #f5f5f53b;
+    --bg-blue-light: #EAF2FD;
+    --border-input: #C8C8C8;
+}
+
+.root{
+    transition: all .5s ease-in-out;
+}
+
+body, textarea{
+    font-family: 'Raleway';
+}

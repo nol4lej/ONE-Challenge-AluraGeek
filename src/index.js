@@ -1,10 +1,8 @@
 import { App } from "./app.js"
-import("./controllers/logout-observer.js")
-import { } from "./controllers/session-buttons.js"
-import("./helpers/products/products-manage.js")
+import { productsSubject } from "./observables/products.js"
 
-import("./components/contactfooter.js")
-
-window.addEventListener("DOMContentLoaded", async () => {
+window.addEventListener("DOMContentLoaded", () => {
+    productsSubject.fetchProducts()
+    import("./components/init.components.js")
     App()
 })

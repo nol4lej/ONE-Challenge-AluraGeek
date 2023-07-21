@@ -1,20 +1,27 @@
 export class Subject{
+
     constructor(){
         this.observers = []
     }
 
-    notify(obj){
+    notify(data){
         this.observers.forEach(observer => {
-            observer.notify(obj)
-        })
+            if(typeof observer === "function"){
+                observer(data)
+            } else {
+                observer.notify(data)
+            }
+            
+        });
     }
 
-    suscribe(observer){
+    subscribe(observer){
         this.observers.push(observer)
     }
 
-    unsuscribe(observer){
-        this.observers = this.observers.filter(e => e != observer)
+    unsubscribe(subs){
+        this.observers = this.observers.filter(observer => {
+            observer !== subs
+        })
     }
-
 }

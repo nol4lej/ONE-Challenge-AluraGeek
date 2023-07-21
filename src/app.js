@@ -1,22 +1,8 @@
-import { Router } from "./router/router.js";
-import { Loading } from "../src/components/loading.js";
-import { user } from "./helpers/users/users-handle.js";
+import { router } from "./router/router.js";
 
-export function App(){
-
-    user.loginState()
-
-
-
-    Loading();
-    setTimeout(() => {
-        Router(window.location.hash)
-    }, 500);
+export const App = () => {
+    router(window.location.hash);
     window.addEventListener("hashchange", () => {
-        Loading();
-        setTimeout(() => {
-            Router(window.location.hash)
-        }, 500);
+        router(window.location.hash);
     });
-}
-
+};

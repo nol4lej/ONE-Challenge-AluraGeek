@@ -1,0 +1,26 @@
+random-products{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all .5s ease-in-out;
+}
+
+.random__title{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.random__content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+
+    random-products{
+        padding: 32px;
+    }
+
+}
