@@ -22,6 +22,15 @@
 /* ALL PRODUCTS BY CATEGORY */
 @import url("/src/components/all-products-category/allbycategory.css");
 
+/* FOOTER */
+@import url("/src/components/footer/footer.css");
+
+/* LOGIN FORM */
+@import url("/src/components/login/login.css");
+
+/* REGISTER FORM */
+@import url("/src/components/register/register.css");
+
 :root{
     --color-white: #FFFFFF;
     --color-blue: #2A7AE4;

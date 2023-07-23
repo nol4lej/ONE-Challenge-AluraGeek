@@ -18,3 +18,12 @@ import("./random-products/random-products.js")
 
 // ALL PRODUCTS BY CATEGORY
 import("./all-products-category/allbycategory.js")
+
+// FOOTER
+import("./footer/footer.js")
+
+// LOGIN FORM
+import("./login/login.js")
+
+// REGISTER FORM
+import("./register/register.js")

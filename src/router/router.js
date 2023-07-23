@@ -2,11 +2,15 @@ import { MainView } from "../views/main.view";
 import { Error404 } from "../views/error404.view"
 import { ViewProduct } from "../views/product.view";
 import { allByCategoryView } from "../views/allbycategory.view";
+import { Login } from "../views/forms/login.view";
+import { Register } from "../views/forms/register.view";
 
 const pages = {
     404: Error404,
     "": MainView,
     "#/": MainView,
+    "#/login": Login,
+    "#/register": Register,
     "#/id=": ViewProduct,
     "#/category=": allByCategoryView
 

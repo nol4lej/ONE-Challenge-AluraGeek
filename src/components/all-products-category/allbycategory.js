@@ -1,3 +1,4 @@
+import { productsSubject } from "../../observables/products.js"
 import {state} from "../../state/state.js"
 
 export class allByCategory extends HTMLElement{
@@ -18,15 +19,19 @@ export class allByCategory extends HTMLElement{
             arrayProducts = this.renderProducts(category)
         }
 
-
-
-
         this.innerHTML = `
             <div class="">
-                <h2 class="">Todos los productos ${category}</h2>
+                <h2 class="bycategory__title">Todos los productos ${category}</h2>
             </div>
-            <div class="" id="">${arrayProducts}</div>
+            <div class="bycategory__container">${arrayProducts}</div>
         `
+    }
+
+    get category(){
+        return this.getAttribute("category")
+    }
+    set category(value){
+        this.setAttribute("category", value)
     }
 
     renderProducts(category){
@@ -42,12 +47,11 @@ export class allByCategory extends HTMLElement{
         return fixedArray
     }
 
-
-    get category(){
-        return this.getAttribute("category")
-    }
-    set category(value){
-        this.setAttribute("category", value)
+    suscribeToProducts(){
+        productsSubject.subscribe((data) => {
+            this.render()
+            this.renderProducts()
+        })
     }
 
 }
