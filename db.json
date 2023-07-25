@@ -8,11 +8,39 @@
       "id": "9f8fe61d-62a2-4c13-928e-481cf12e1e86"
     },
     {
-      "name": "Admin",
-      "email": "admin@admin.com",
-      "password": "$2a$10$yRpDfxGR2vdqFRRk32f3huVoNIm7TFfHnjygO7bpGsx55Ia8fGd.C",
+      "name": "admin",
+      "email": "",
+      "password": "$2a$10$1P9MS42aRq50ibkP8TQ/He2dobFP5qaZBx.IUTCRS8Z/liWhdLYqO",
       "role": "user",
-      "id": "52b2f29a-1622-4b6b-a7b1-4a4eb73e9a1c"
+      "id": "bed413d0-795b-49e2-aefe-a685759888aa"
+    },
+    {
+      "name": "test",
+      "email": "test",
+      "password": "$2a$10$aLzeCLiuRZtXvdNhfG8zZungn.UeOwEEBgKt9M48R9.i9Z49qrzKS",
+      "role": "user",
+      "id": "dd11e73d-d95d-47c9-a3b3-f7f9224bf816"
+    },
+    {
+      "name": "asdas",
+      "email": "dd",
+      "password": "$2a$10$fxUvzshaoykJeWMPl7sqR.CVJpuZgzal1XbWSqbnxDrNfbSxBwhOy",
+      "role": "user",
+      "id": "6993dbc0-d677-4e8b-9682-2bf1c291f3b4"
+    },
+    {
+      "name": "dd",
+      "email": "asd",
+      "password": "$2a$10$DXOnS2htGfIgf03gsF9OR.ysXys/NnRIttkZour8A3.E8eXWIM7h.",
+      "role": "user",
+      "id": "30da9504-ba95-4b73-9ea1-9bc633ae24e7"
+    },
+    {
+      "name": "",
+      "email": "dd",
+      "password": "$2a$10$EZe8oGjfy6UX0hPS8dXWdOec24TjNZncx20GuBydtWYZm4hrWwF0K",
+      "role": "user",
+      "id": "d2944850-8f7a-44f8-8292-65ca828b8c01"
     }
   ],
   "categories": [

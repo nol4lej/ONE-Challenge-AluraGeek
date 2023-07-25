@@ -9,21 +9,16 @@ export class allByCategory extends HTMLElement{
 
     connectedCallback(){
         this.render()
+        this.renderProducts()
+        this.suscribeToProducts()
     }
 
     render(){
-        const category = this.getAttribute("category")
-
-        let arrayProducts
-        if(state.productsByCategory.hasOwnProperty(category)){
-            arrayProducts = this.renderProducts(category)
-        }
-
         this.innerHTML = `
             <div class="">
-                <h2 class="bycategory__title">Todos los productos ${category}</h2>
+                <h2 class="bycategory__title">Todos los productos</h2>
             </div>
-            <div class="bycategory__container">${arrayProducts}</div>
+            <div class="bycategory__container" id="bycategory-container"></div>
         `
     }
 
@@ -34,23 +29,32 @@ export class allByCategory extends HTMLElement{
         this.setAttribute("category", value)
     }
 
-    renderProducts(category){
-        const currentCategory = state.productsByCategory[category]
-        const arrayProducts = currentCategory.map(product => {
-            const { imageUrl, name, price, id } = product
-            const html = `
-                <product-card src="${imageUrl}" title="${name}" price="${price}" link="${id}"></product-card>
-            `
-            return html
-        })
-        const fixedArray = arrayProducts.join("")
-        return fixedArray
+    renderProducts(){
+        const category = this.getAttribute("category")
+        const container = this.querySelector("#bycategory-container")
+
+        if(state.productsByCategory.hasOwnProperty(category)){
+            const arrayProductsHTML = [];
+            const currentCategory = state.productsByCategory[category]
+            currentCategory.forEach(product => {
+                const { imageUrl, name, price, id } = product
+                const html = `
+                    <product-card src="${imageUrl}" title="${name}" price="${price}" link="${id}"></product-card>
+                `
+                arrayProductsHTML.push(html)
+            })
+            const arrayWithoutCommas = arrayProductsHTML.join("");
+            container.innerHTML = arrayWithoutCommas;   
+        } else {
+            container.innerHTML = "<loader-component></loader-component>"
+        }
+
     }
 
     suscribeToProducts(){
-        productsSubject.subscribe((data) => {
+    productsSubject.subscribe((data) => {
             this.render()
-            this.renderProducts()
+            this.renderProducts()   
         })
     }
 

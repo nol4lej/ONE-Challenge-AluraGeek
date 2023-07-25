@@ -8,12 +8,12 @@ class Login extends HTMLElement{
 
     connectedCallback(){
         this.render()
-        this.handleUser()
+        this.handleLogin()
     }
 
     render(){
         this.innerHTML = ` 
-            <div class="login__container">
+            <div class="login__container" id="login-container">
                 <h2 class="login__title">Iniciar Sesión</h2>
                 <div class="login__form__container">
                     <form method="get" class="login__form" id="login-form">
@@ -26,28 +26,34 @@ class Login extends HTMLElement{
                         </div>
                         
                     </form>
+                    <span id="user-info" class="login__error"></span>
                 </div>
-                <span id="user-info"></span>
             </div>
         `
     }
 
-    async handleUser(){
-        const form = document.getElementById("login-form")
+    async handleLogin(){
+        const form = this.querySelector("#login-form")
+
         form.addEventListener("submit", async (event) => {
             event.preventDefault()
-            const inputUser = document.getElementById("login-user-email").value
-            const password = document.getElementById("login-password").value
+            const inputUser = this.querySelector("#login-user-email").value
+            const password = this.querySelector("#login-password").value
 
             try {
-                await user.login(inputUser, password)
+                const res = await user.login(inputUser, password)
+                const container = this.querySelector("#login-container")
+                container.innerHTML = `
+                        <h2 class="login__title">${res}</h2>
+                        <loader-component></loader-component>
+                    `
                 setTimeout(() => {
                     window.location.href = "#";
-                }, 2000);
+                }, 1000);
             } catch (error) {
-                const info = document.getElementById("user-info")
+                const info = this.querySelector("#user-info")
                 info.innerHTML = `
-                    ${error}
+                    <i class="material-icons">error</i> ${error}
                 `
             }
         })

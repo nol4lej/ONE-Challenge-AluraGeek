@@ -27,3 +27,6 @@ import("./login/login.js")
 
 // REGISTER FORM
 import("./register/register.js")
+
+// LOADER
+import("./loader/loader.js")

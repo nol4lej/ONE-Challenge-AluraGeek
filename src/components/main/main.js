@@ -40,18 +40,18 @@ export class MainComponent extends HTMLElement {
         `
     }
 
-    renderByCategory(){{
-        const arrayProducts = Object.entries(state.productsByCategory)
+    renderByCategory(){
 
-        arrayProducts.forEach(category => {
-            const container = this.querySelector(`#${category[0]}`)
+        const containers = this.querySelectorAll(".products__content")
 
-            if(container){
+        containers.forEach(container => {
+
+            if(state.productsByCategory.hasOwnProperty(container.id)){
 
                 let contador = 0;
                 const arrayProductsHTML = [];
 
-                for (const product of category[1]){
+                for (const product of state.productsByCategory[container.id]){
                     if (contador >= 6) {
                         break; // Detener el bucle cuando contador llega a 6
                     }
@@ -66,14 +66,17 @@ export class MainComponent extends HTMLElement {
                 // Unir los elementos del array sin comas
                 const arrayWithoutCommas = arrayProductsHTML.join("");
                 container.innerHTML = arrayWithoutCommas;
+                return
             }
+
+            container.innerHTML = "<loader-component></loader-component>"
+
+                
         })
-    }}
+    }
 
     suscribeToProducts(){
-        // suscribiendo al sujeto "productsSubject"
         productsSubject.subscribe((data) => {
-            state.products = data;
             this.render();
             this.renderByCategory()
         })

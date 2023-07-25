@@ -6,17 +6,21 @@ class ProductsSubject extends Subject{
 
     constructor(){
         super();
+        this.products;
+        this.productsByCategory;
     };
 
-    notify(data){
-        super.notify(data)
+    notify(prods, resultProductsByCategory){
+        this.products = prods
+        this.productsByCategory = resultProductsByCategory
+        super.notify(this.products, this.productsByCategory)
     }
 
     async fetchProducts(){
         const products = await fetchGet('http://localhost:3000/productos')
         state.products = products  // Actualizamos el estado global con los productos
-        this.orderByCategory(products)
-        this.notify(products)
+        const resultProductsByCategory = this.orderByCategory(products)
+        this.notify([products, resultProductsByCategory])
     }
 
     orderByCategory(products){
@@ -34,8 +38,9 @@ class ProductsSubject extends Subject{
                     state.productsByCategory[category].push(product)
                 }
             })
+            return state.productsByCategory
         } catch (error) {
-            console.log("Error en orderByCategory:", error)
+            console.error("Error en orderByCategory:", error)
         }
     }
 
@@ -51,12 +56,3 @@ class ProductsSubject extends Subject{
 }
 
 export const productsSubject = new ProductsSubject()
-
-class Observer{
-    notify(subject){
-        // console.log(subject)
-    }
-}
-
-const observer = new Observer()
-productsSubject.subscribe(observer)
