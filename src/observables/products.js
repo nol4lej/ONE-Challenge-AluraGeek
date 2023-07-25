@@ -17,7 +17,7 @@ class ProductsSubject extends Subject{
     }
 
     async fetchProducts(){
-        const products = await fetchGet('http://localhost:3000/productos')
+        const products = await fetchGet('https://json-server-k3m3.onrender.com/productos')
         state.products = products  // Actualizamos el estado global con los productos
         const resultProductsByCategory = this.orderByCategory(products)
         this.notify([products, resultProductsByCategory])
@@ -46,7 +46,7 @@ class ProductsSubject extends Subject{
 
     async getProduct(currentId) {
         try {
-            const res = await fetchGet(`http://localhost:3000/productos/${currentId}`)
+            const res = await fetchGet(`https://json-server-k3m3.onrender.com/productos/${currentId}`)
             return res;
         } catch (error) {
             console.error("No se puede traer el producto:", error)
