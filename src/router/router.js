@@ -4,6 +4,7 @@ import { ViewProduct } from "../views/product.view";
 import { allByCategoryView } from "../views/allbycategory.view";
 import { Login } from "../views/forms/login.view";
 import { Register } from "../views/forms/register.view";
+import { Panel } from "../views/panel/panel.view";
 
 const pages = {
     404: Error404,
@@ -11,6 +12,7 @@ const pages = {
     "#/": MainView,
     "#/login": Login,
     "#/register": Register,
+    "#/panel": Panel,
     "#/id=": ViewProduct,
     "#/category=": allByCategoryView
 

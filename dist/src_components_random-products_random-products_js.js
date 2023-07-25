@@ -1,0 +1,22 @@
+"use strict";
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(self["webpackChunkalurageek"] = self["webpackChunkalurageek"] || []).push([["src_components_random-products_random-products_js"],{
+
+/***/ "./src/components/random-products/random-products.js":
+/*!***********************************************************!*\
+  !*** ./src/components/random-products/random-products.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   RandomProducts: () => (/* binding */ RandomProducts)\n/* harmony export */ });\n/* harmony import */ var _observables_products_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../observables/products.js */ \"./src/observables/products.js\");\n/* harmony import */ var _state_state_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../state/state.js */ \"./src/state/state.js\");\n\r\n\r\n\r\nclass RandomProducts extends HTMLElement{\r\n\r\n    constructor(){\r\n        super()\r\n        this.randomProducts = []\r\n    };\r\n\r\n    async connectedCallback(){\r\n        await this.render()\r\n    }\r\n\r\n    async render(){\r\n        const productId = this.getAttribute(\"product-id\")\r\n        const product = await _observables_products_js__WEBPACK_IMPORTED_MODULE_0__.productsSubject.getProduct(productId)\r\n        const { category } = product\r\n\r\n        let arrayRandom;\r\n        if(_state_state_js__WEBPACK_IMPORTED_MODULE_1__.state.productsByCategory.hasOwnProperty(category)){\r\n            arrayRandom = this.createRandomArray(category, product)\r\n        } else {\r\n            arrayRandom = \"No hay más productos para esta categoría.\"\r\n        }\r\n\r\n        this.innerHTML = `\r\n            <div class=\"\">\r\n                <h2 class=\"random__title\">Productos similares</h2>\r\n            </div>\r\n            <div class=\"random__content\" id=\"\">${arrayRandom}</div>\r\n        `\r\n    }\r\n\r\n    get id(){\r\n        return this.getAttribute(\"product-id\")\r\n    }\r\n    set id(value){\r\n        this.setAttribute(\"product-id\", value)\r\n    }\r\n\r\n    createRandomArray(category, currentProduct){\r\n        this.randomProducts = [] // reinicio el array, sino se acumulan los random products de cada view\r\n        let contador = 0\r\n        let maxContador = 6\r\n        const currentCategory = _state_state_js__WEBPACK_IMPORTED_MODULE_1__.state.productsByCategory[category]\r\n        if(currentCategory.length < 7){\r\n            maxContador = currentCategory.length - 1 // agrego -1 para descontar el currentProduct\r\n        }\r\n        while(contador !== maxContador){\r\n            const RandomIndex = Math.floor(Math.random() * currentCategory.length);\r\n            const ProductSelect = currentCategory[RandomIndex]\r\n\r\n            // compruebar que el producto random exista y que el pructo random no sea el mismo de la vista\r\n            if(!this.randomProducts.includes(ProductSelect) && ProductSelect !== currentProduct){\r\n                \r\n                const productHTML = this.renderRandomProducts(ProductSelect)\r\n                \r\n                this.randomProducts.push(productHTML)\r\n                contador++\r\n            }\r\n        }\r\n        return this.randomProducts\r\n    }\r\n\r\n    renderRandomProducts(ProductSelect){\r\n        const { imageUrl, name, price, id } = ProductSelect\r\n        const html = `\r\n            <product-card src=\"${imageUrl}\" title=\"${name}\" price=\"${price}\" link=\"${id}\"></product-card>\r\n        `\r\n        return html\r\n    }\r\n\r\n}\r\n\r\ncustomElements.define(\"random-products\", RandomProducts)\n\n//# sourceURL=webpack://alurageek/./src/components/random-products/random-products.js?");
+
+/***/ })
+
+}]);
