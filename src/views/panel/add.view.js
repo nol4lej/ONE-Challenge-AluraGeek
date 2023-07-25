@@ -1,7 +1,7 @@
-export const Panel = () => {
+export const AddProduct = () => {
     const container = `
         <nav-panel></nav-panel>
-        <perfil-panel><perfil-panel>
+        <add-products></add-products>
     `
     return container
 }

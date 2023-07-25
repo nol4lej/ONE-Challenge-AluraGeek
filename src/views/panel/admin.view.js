@@ -1,7 +1,7 @@
-export const Panel = () => {
+export const Admin = () => {
     const container = `
         <nav-panel></nav-panel>
-        <perfil-panel><perfil-panel>
+        <admin-products></admin-products>
     `
     return container
 }

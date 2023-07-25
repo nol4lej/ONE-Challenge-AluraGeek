@@ -5,6 +5,8 @@ import { allByCategoryView } from "../views/allbycategory.view";
 import { Login } from "../views/forms/login.view";
 import { Register } from "../views/forms/register.view";
 import { Panel } from "../views/panel/panel.view";
+import { Admin } from "../views/panel/admin.view";
+import { AddProduct } from "../views/panel/add.view";
 
 const pages = {
     404: Error404,
@@ -13,6 +15,8 @@ const pages = {
     "#/login": Login,
     "#/register": Register,
     "#/panel": Panel,
+    "#/panel/administrar": Admin,
+    "#/panel/addproduct": AddProduct,
     "#/id=": ViewProduct,
     "#/category=": allByCategoryView
 
@@ -21,17 +25,6 @@ const pages = {
 export const router = (hash) => {
     const root = document.getElementById("root")
     root.innerHTML = ""
-
-    // if(hashIdValidation(hash)){
-    //     const id = hashIdValidation(hash);
-    //     const route = pages["#/id="];
-    //     root.innerHTML = route(id);
-    // } else {
-    //     const route = pages[hash] || pages[404]
-    //     root.innerHTML = route()
-    // }
-
-    
     
     switch (true) {
         case hash.startsWith("#/id="):

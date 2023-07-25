@@ -45,9 +45,8 @@ export class MainComponent extends HTMLElement {
         const containers = this.querySelectorAll(".products__content")
 
         containers.forEach(container => {
-
+            container.innerHTML = "<loader-component></loader-component>"
             if(state.productsByCategory.hasOwnProperty(container.id)){
-
                 let contador = 0;
                 const arrayProductsHTML = [];
 
@@ -69,7 +68,7 @@ export class MainComponent extends HTMLElement {
                 return
             }
 
-            container.innerHTML = "<loader-component></loader-component>"
+            container.innerHTML = "No hay productos para esta categoría."
 
                 
         })

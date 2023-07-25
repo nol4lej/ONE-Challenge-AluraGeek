@@ -30,3 +30,18 @@ import("./register/register.js")
 
 // LOADER
 import("./loader/loader.js")
+
+// NAV PANEL
+import("./panel/nav-panel/nav-panel.js")
+
+// MAIN PANEL
+import("./panel/main-panel/main-panel.js")
+
+// ADMINSTRAR PRODUCTOS
+import("./panel/admin-prods/admin-prods.js")
+
+// ADD PRODUCTS
+import("./panel/add-prods/add-prods.js")
+
+// PERFIL
+import("./panel/perfil/perfil.js")

@@ -34,6 +34,21 @@
 /* LOADER */
 @import url("/src/components/loader/loader.css");
 
+/* NAV PANEL */
+@import url("/src/components/panel/nav-panel/nav-panel.css");
+
+/* MAIN PANEL */
+@import url("/src/components/panel/main-panel/main-panel.css");
+
+/* ADMINISTRAR PRODUCTOS */
+@import url("/src/components/panel/admin-prods/admin-prods.css");
+
+/* PERFIL */
+@import url("/src/components/panel/perfil/perfil.css");
+
+/* ADD PRODUCTS */
+@import url("/src/components/panel/add-prods/add-prods.css");
+
 :root{
     --color-white: #FFFFFF;
     --color-blue: #2A7AE4;

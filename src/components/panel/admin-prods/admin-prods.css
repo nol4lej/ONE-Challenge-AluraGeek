@@ -1,0 +1,51 @@
+.admin__container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    transition: all .5s ease-in-out;
+}
+
+.admin__header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin__title{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.admin__link{
+    padding: 10px;
+    background-color: var(--color-blue);
+    border-radius: 5px;
+    color: var(--color-white);
+}
+
+
+.admin__products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center
+}
+
+@media screen and (min-width: 768px) {
+    
+    .admin__container{
+        padding: 64px;
+    }
+
+}
+
+@media screen and (min-width: 1220px) {
+    
+    .admin__container{
+        padding: 64px 128px;
+    }
+
+}

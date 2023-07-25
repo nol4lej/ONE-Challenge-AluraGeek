@@ -1,0 +1,14 @@
+.nav__panel{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--bg-gray-light);
+}
+
+.nav__panel__btn{
+    padding: 10px;
+    background-color: var(--color-blue);
+    border-radius: 5px;
+    color: var(--color-white);
+}

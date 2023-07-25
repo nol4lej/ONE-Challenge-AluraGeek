@@ -29,3 +29,24 @@ product-card{
     font-weight: 700;
     color: var(--color-blue);
 }
+
+.btns__img__container{
+    position: relative;
+}
+
+.btns__container{
+    position: absolute;
+    padding: 5px;
+    right: 0;
+    z-index: 999;
+    color: var(--color-white);
+}   
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor alpha para cambiar la intensidad */
+  }

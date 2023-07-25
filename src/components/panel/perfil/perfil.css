@@ -1,0 +1,31 @@
+perfil-panel{
+    display: flex;
+    justify-content: center;
+    padding: 26px;
+}
+
+.perfil__container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+    width: max-content;
+    border-radius: 10px;
+    background-color: var(--bg-gray-light);
+}
+
+.perfil__data{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.data__name{
+    color: var(--color-gray);
+}
+
+.data__output{
+    background-color: var(--bg-blue-light);
+    padding: 10px;
+    border-radius: 10px;
+}
