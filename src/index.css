@@ -46,8 +46,11 @@
 /* PERFIL */
 @import url("/src/components/panel/perfil/perfil.css");
 
-/* ADD PRODUCTS */
-@import url("/src/components/panel/add-prods/add-prods.css");
+/* MANAGE PRODUCTS */
+@import url("/src/components/panel/manage-prods/manage-prods.css");
+
+/* MODAL CONFIRM */
+@import url("/src/components/modal-confirm/modal-confirm.css");
 
 :root{
     --color-white: #FFFFFF;
@@ -56,6 +59,7 @@
     --color-gray: #464646;
     --color-gray-light: #A2A2A2;
     --color-red:  #FF0000;
+    --color-green: #1fb41f;
     --bg-gray: #F5F5F5;
     --bg-gray-light: #F5F5F5;
     --bg-gray-light-transparent: #f5f5f53b;
@@ -69,4 +73,5 @@
 
 body, textarea{
     font-family: 'Raleway';
+    transition: all .5s ease-in-out;
 }

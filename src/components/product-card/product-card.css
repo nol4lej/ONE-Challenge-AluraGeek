@@ -40,7 +40,11 @@ product-card{
     right: 0;
     z-index: 999;
     color: var(--color-white);
-}   
+}
+
+.delete__btn{
+    color: var(--color-white);
+}
 
 .overlay {
     position: absolute;

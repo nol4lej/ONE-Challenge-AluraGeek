@@ -1,4 +1,4 @@
-add-products{
+manage-products{
     padding: 16px;
     display: flex;
     justify-content: center;
@@ -58,6 +58,10 @@ add-products{
     width: 100%;
 }
 
+.description__input{
+    resize: none;
+}
+
 .container__number{
     display: flex;
     align-items: center;
@@ -70,6 +74,23 @@ add-products{
     font-size: 16px;
     font-weight: 400;
     height: 51px;
+}
+
+.product__info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.product__info.success{
+    color: var(--color-green);
+}
+
+.product__info.error{
+    color: var(--color-red);
 }
 
 @media screen and (min-width: 768px) {

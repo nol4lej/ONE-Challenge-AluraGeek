@@ -40,8 +40,11 @@ import("./panel/main-panel/main-panel.js")
 // ADMINSTRAR PRODUCTOS
 import("./panel/admin-prods/admin-prods.js")
 
-// ADD PRODUCTS
-import("./panel/add-prods/add-prods.js")
+// MANAGE PRODUCTS
+import("./panel/manage-prods/manage-prods.js")
 
 // PERFIL
 import("./panel/perfil/perfil.js")
+
+// MODAL CONFIRM
+import("./modal-confirm/modal-confirm.js")

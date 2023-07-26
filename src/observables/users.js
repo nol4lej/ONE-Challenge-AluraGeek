@@ -18,7 +18,7 @@ class Users extends Subject{
     async login(inputUser, password){
         return new Promise( async (resolve, reject) => {
             try {
-                const users = await fetchGet("https://json-server-k3m3.onrender.com/users")
+                const users = await fetchGet("http://localhost:3000/users")
                 let userFound = false;
 
                 if(!users){
@@ -86,7 +86,7 @@ class Users extends Subject{
                 id: uuidv4()
             }
 
-            const res = await fetchPost("https://json-server-k3m3.onrender.com/users", newUser)
+            const res = await fetchPost("http://localhost:3000/users", newUser)
             return "Usuario creado exitosamente."
 
         } catch (error) {   

@@ -1,12 +1,12 @@
-import { MainView } from "../views/main.view";
+import { MainView } from "../views/products/main.view";
 import { Error404 } from "../views/error404.view"
-import { ViewProduct } from "../views/product.view";
-import { allByCategoryView } from "../views/allbycategory.view";
+import { ViewProduct } from "../views/products/product.view";
+import { allByCategoryView } from "../views/products/allbycategory.view";
 import { Login } from "../views/forms/login.view";
 import { Register } from "../views/forms/register.view";
 import { Panel } from "../views/panel/panel.view";
 import { Admin } from "../views/panel/admin.view";
-import { AddProduct } from "../views/panel/add.view";
+import { ManageProduct } from "../views/panel/manage.view";
 
 const pages = {
     404: Error404,
@@ -16,7 +16,8 @@ const pages = {
     "#/register": Register,
     "#/panel": Panel,
     "#/panel/administrar": Admin,
-    "#/panel/addproduct": AddProduct,
+    "#/panel/product?add": ManageProduct,
+    "#/panel/product?edit=": ManageProduct,
     "#/id=": ViewProduct,
     "#/category=": allByCategoryView
 
@@ -36,6 +37,17 @@ export const router = (hash) => {
             const category = categoryValidation(hash);
             const categoryRoute = pages["#/category="];
             root.innerHTML = categoryRoute(category);
+            break;
+        case hash.startsWith("#/panel/product?"):
+            const isManage = productManagedValidation(hash);
+            let manageRoute;
+            if(isManage){
+                manageRoute = pages["#/panel/product?edit="];
+                root.innerHTML = manageRoute(isManage);
+                break
+            }
+            manageRoute = pages["#/panel/product?add"];
+            root.innerHTML = manageRoute(isManage);
             break;
         default:
             const route = pages[hash] || pages[404]
@@ -58,6 +70,18 @@ const categoryValidation = (hash) => {
     const category = params.get("category");
     if(category){
         return category
+    } else {
+        return false
+    }
+}
+
+const productManagedValidation = (hash) => {
+    // Obtener la cadena de consulta (query string) eliminando lo que está antes del '?'
+    const queryString = hash.split('?')[1];
+    const params = new URLSearchParams(queryString);
+    const id = params.get("edit");
+    if(id){
+        return id
     } else {
         return false
     }

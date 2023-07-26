@@ -2,27 +2,30 @@ export class ProductCard extends HTMLElement{
 
     constructor(){
         super();
+        this.cardState = this.getAttribute("toManage")
     };
 
     connectedCallback(){
         this.render();
+
+        // comprueba si cardState es "yes"
+        if(this.cardState){
+            this.handleDelete()
+        }
     };
 
     render() {
         const src = this.getAttribute('src');
         const title = this.getAttribute('title');
         const price = this.getAttribute('price');
-        const link = this.getAttribute('link');
-        const toManage = this.getAttribute('toManage');
-        console.log(toManage);
-    
-        if (toManage === "yes") {
-            this.innerHTML = `
+        const link = this.getAttribute('link'); // link es el id de cada producto y se utiliza en link y edit
 
+        if (this.cardState === "yes") {
+            this.innerHTML = `
                 <div class="btns__img__container">
                     <div class="btns__container">
-                        <a href="" class="delete__btn"><i class="material-icons">delete</i></a>
-                        <a href="" class="edit__btn"><i class="material-icons">edit</i></a>
+                        <button class="delete__btn" id="modal-delete"><i class="material-icons">delete</i></button>
+                        <a href="#/panel/product?edit=${link}" class="edit__btn"><i class="material-icons">edit</i></a>
                     </div>
                     <div class="img__container">
                         <div class="overlay"></div>
@@ -41,6 +44,19 @@ export class ProductCard extends HTMLElement{
                 <a class="card__link" href="#/id=${link}">Ver producto</a>
             `;
         }
+    }
+
+    handleDelete(){
+        const id = this.getAttribute('link');
+        const btn = this.querySelector("#modal-delete")
+        btn.addEventListener("click", () => {
+            const modal = document.createElement("modal-confirm")
+            modal.setAttribute("productId", id) // le mando el id del producto al modal.
+            setTimeout(() => {
+                modal.classList.add("active")
+            }, 100);
+            this.appendChild(modal)
+        })
     }
     
 

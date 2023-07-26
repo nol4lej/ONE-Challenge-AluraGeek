@@ -1,4 +1,5 @@
 import { state } from "../../../state/state.js"
+import {productsSubject} from "../../../observables/products.js"
 
 export class AdminProds extends HTMLElement{
 
@@ -9,6 +10,7 @@ export class AdminProds extends HTMLElement{
     connectedCallback(){
         this.render()
         this.handleProducts()
+        this.suscribeToProducts()
     }
 
     render(){
@@ -16,7 +18,7 @@ export class AdminProds extends HTMLElement{
         <section class="admin__container">
             <div class="admin__header">
                 <h2 class="admin__title">Administrar Productos</h2>
-                <a class="admin__link" href="#/panel/addproduct">Agregar Producto</a>
+                <a class="admin__link" href="#/panel/product?add">Agregar Producto</a>
             </div>
             <div class="admin__products" id="all-products"></div>
         </section>
@@ -41,7 +43,12 @@ export class AdminProds extends HTMLElement{
         return
     }
 
-
+    suscribeToProducts(){
+        productsSubject.subscribe((data) => {
+            this.render()
+            this.handleProducts()
+        })
+    }
 
 
 }

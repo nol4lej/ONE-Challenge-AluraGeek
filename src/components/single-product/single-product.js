@@ -11,9 +11,14 @@ export class SingleProduct extends HTMLElement{
     }
 
     async render(){
+
+        this.innerHTML = "<loader-component></loader-component>"
+
         const id = this.getAttribute('product-id');
         const product = await productsSubject.getProduct(id)
         const { imageUrl, name, price, description} = product
+
+        
 
         if(JSON.stringify(product) === "{}"){
             this.innerHTML = `
