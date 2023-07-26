@@ -33,14 +33,14 @@ export class ProductCard extends HTMLElement{
                     </div>
                 </div>
                 <h3 class="card__titile">${title}</h3>
-                <p class="card__price">${price}</p>
+                <p class="card__price">$ ${price}</p>
                 <a class="card__link" href="#/id=${link}">Ver producto</a>
             `;
         } else {
             this.innerHTML = `
                 <img class="card__img" src="${src}" alt="${title}">
                 <h3 class="card__titile">${title}</h3>
-                <p class="card__price">${price}</p>
+                <p class="card__price">$ ${price}</p>
                 <a class="card__link" href="#/id=${link}">Ver producto</a>
             `;
         }
