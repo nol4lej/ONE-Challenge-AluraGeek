@@ -18,13 +18,12 @@ class Login extends HTMLElement{
                 <div class="login__form__container">
                     <form method="get" class="login__form" id="login-form">
                         <div class="login__inputs__container">
-                            <input id="login-user-email" class="login__input" type="text" placeholder="Escriba su nombre de usuario o correo electronico">
-                            <input id="login-password" class="login__input" type="password" placeholder="Escriba su contraseña">
+                            <input id="login-user-email" class="login__input" type="text" placeholder="Escriba su nombre de usuario o correo electronico" required>
+                            <input id="login-password" class="login__input" type="password" placeholder="Escriba su contraseña" required>
                         </div>
                         <div class="login__btn__container">
                             <button class="login__btn" type="submit">Entrar</button>
                         </div>
-                        
                     </form>
                     <span id="user-info" class="login__error"></span>
                 </div>

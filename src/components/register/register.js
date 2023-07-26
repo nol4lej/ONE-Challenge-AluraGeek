@@ -19,11 +19,11 @@ class Register extends HTMLElement{
                     <form class="register__form" id="register-form">
                         <div class="register__inputs__container">
                             <label for=""></label>
-                            <input class="register__input" type="text" placeholder="Escriba su correo electronico" id="email-input">
+                            <input class="register__input" type="email" placeholder="Escriba su correo electronico" id="email-input" required>
                             <label for=""></label>
-                            <input class="register__input" type="text" placeholder="Escriba su nombre de usuario" id="user-input">
+                            <input class="register__input" type="text" placeholder="Escriba su nombre de usuario" id="user-input" required>
                             <label for=""></label>
-                            <input class="register__input" type="password" placeholder="Escriba su contraseña" id="password-input">   
+                            <input class="register__input" type="password" placeholder="Escriba su contraseña" id="password-input" required>   
                         </div>
                         <div class="register__btn__container">
                             <button class="register__btn" type="submit">Registrar</button>

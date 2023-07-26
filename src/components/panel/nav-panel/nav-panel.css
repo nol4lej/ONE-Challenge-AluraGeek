@@ -12,3 +12,7 @@
     border-radius: 5px;
     color: var(--color-white);
 }
+
+.admin__btn__container{
+    display: flex;
+}

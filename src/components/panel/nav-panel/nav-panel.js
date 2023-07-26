@@ -1,4 +1,3 @@
-// import { user } from "../../../observables/users.js"
 import { state } from "../../../state/state.js"
 
 export class NavPanel extends HTMLElement{
@@ -46,7 +45,8 @@ export class NavPanel extends HTMLElement{
     handleRoleUser(){
         if(this.userState.role === "admin"){
             const nav = this.querySelector("#nav-panel")
-            const panelBtn = document.createElement("span")
+            const panelBtn = document.createElement("div")
+            panelBtn.classList.add("admin__btn__container")
             panelBtn.innerHTML = `
                 <a href="#/panel/administrar" id="admin-nav" class="nav__panel__btn">Administrar productos</a>
             `

@@ -1,13 +1,16 @@
 import { productsSubject } from "../../../observables/products.js"
-
+import { state } from "../../../state/state.js";
 
 export class ManageProducts extends HTMLElement{
 
     constructor(){
         super()
+        this.userState = state.user
     }
 
     connectedCallback(){
+        this.handleRoleUser()
+
         this.render()
 
         let isEditstate = false;
@@ -36,16 +39,16 @@ export class ManageProducts extends HTMLElement{
             <form id="manageproduct-form" class="add__form">
                 <div class="add__img">
                     <label for="" class="img__label">URL de la imagen</label>
-                    <input type="text" id="img-input" class="img__input">
+                    <input type="text" id="img-input" class="img__input" required>
                 </div>
                 <div class="add__name">
                 <label for="" class="name__label">Nombre del producto</label>
-                    <input type="text" id="name-input" class="name__input">
+                    <input type="text" id="name-input" class="name__input" required>
                 </div>
                 <div class="add__category">
                     <label for="" class="categoria__label">Categoría</label>
-                    <select id="categoria-select" class="categoria__input">
-                        <option disabled selected >Selecciona una categoría</option>
+                    <select id="categoria-select" class="categoria__input" required>
+                        <option disabled selected value="">Selecciona una categoría</option>
                         <option value="starwars">Star Wars</option>
                         <option value="consola">Consola</option>
                         <option value="otros">Otros</option>
@@ -53,11 +56,11 @@ export class ManageProducts extends HTMLElement{
                 </div>
                 <div class="add__price">
                     <label for="" class="price__label">Precio del producto</label>
-                    <p class="container__number">$<input type="text" id="price-input" class="price__input"></p>
+                    <p class="container__number">$<input type="text" id="price-input" class="price__input" required></p>
                 </div>
                 <div class="add__description">
                     <label for="" class="description__label">Descripción del producto</label>
-                    <textarea id="description-input" class="description__input" cols="30" rows="3"></textarea>
+                    <textarea id="description-input" class="description__input" cols="30" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="add__btn" id="submit-btn">Agregar producto</button>
             </form>
@@ -84,7 +87,6 @@ export class ManageProducts extends HTMLElement{
             const category = this.querySelector("#categoria-select").value
             const price = this.querySelector("#price-input").value
             const description = this.querySelector("#description-input").value
-
             const info = this.querySelector("#product-info")
 
             if(isEditstate){
@@ -119,6 +121,13 @@ export class ManageProducts extends HTMLElement{
         this.querySelector("#price-input").value = price;
         this.querySelector("#description-input").value = description;
         this.querySelector("#submit-btn").innerHTML = "Actualizar producto"
+    }
+
+    handleRoleUser(){
+        if(this.userState.role !== "admin"){
+            window.location.href = "#";
+        }
+        return
     }
 
 }
