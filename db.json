@@ -6,6 +6,13 @@
       "password": "$2a$10$q90TgArW7AG4IevqbTZ2GO7sWEjCwJro3ne.XeICRvAQKo6l9LsKy",
       "role": "admin",
       "id": "9f8fe61d-62a2-4c13-928e-481cf12e1e86"
+    },
+    {
+      "name": "test",
+      "email": "test",
+      "password": "$2a$10$uXwggH9xQs3.hP9tcfGY6O0NKax.kvfvjBu298drU8za1Y71PWf.S",
+      "role": "user",
+      "id": "42ff9615-a77f-41a0-a94a-c42583f1f243"
     }
   ],
   "productos": [

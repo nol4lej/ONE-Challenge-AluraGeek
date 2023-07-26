@@ -20,7 +20,6 @@ const pages = {
     "#/panel/product?edit=": ManageProduct,
     "#/id=": ViewProduct,
     "#/category=": allByCategoryView
-
 }
 
 export const router = (hash) => {
@@ -33,11 +32,13 @@ export const router = (hash) => {
             const productRoute = pages["#/id="];
             root.innerHTML = productRoute(id);
             break;
+
         case hash.startsWith("#/category="):
             const category = categoryValidation(hash);
             const categoryRoute = pages["#/category="];
             root.innerHTML = categoryRoute(category);
             break;
+
         case hash.startsWith("#/panel/product?"):
             const isManage = productManagedValidation(hash);
             let manageRoute;
@@ -49,12 +50,14 @@ export const router = (hash) => {
             manageRoute = pages["#/panel/product?add"];
             root.innerHTML = manageRoute(isManage);
             break;
+
         default:
             const route = pages[hash] || pages[404]
             root.innerHTML = route()
             break;
     }
 }
+
 const hashIdValidation = (hash) => {
     const params = new URLSearchParams(hash.slice(2));
     const id = params.get("id");
