@@ -7,6 +7,7 @@ import { Register } from "../views/forms/register.view";
 import { Panel } from "../views/panel/panel.view";
 import { Admin } from "../views/panel/admin.view";
 import { ManageProduct } from "../views/panel/manage.view";
+import { SearchProductView } from "../views/products/searchprod.view"
 
 const pages = {
     404: Error404,
@@ -19,7 +20,8 @@ const pages = {
     "#/panel/product?add": ManageProduct,
     "#/panel/product?edit=": ManageProduct,
     "#/id=": ViewProduct,
-    "#/category=": allByCategoryView
+    "#/category=": allByCategoryView,
+    "#/?search=": SearchProductView
 }
 
 export const router = (hash) => {
@@ -52,6 +54,12 @@ export const router = (hash) => {
             root.innerHTML = manageRoute(isManage);
             break;
 
+        case hash.startsWith("#/?search="):
+            const searchId = manageSearchId(hash);
+            const manageSearch = pages["#/?search="];
+            root.innerHTML = manageSearch(searchId);
+            break;
+            
         default:
             const route = pages[hash] || pages[404]
             root.innerHTML = route()
@@ -84,6 +92,17 @@ const productManagedValidation = (hash) => {
     const queryString = hash.split('?')[1];
     const params = new URLSearchParams(queryString);
     const id = params.get("edit");
+    if(id){
+        return id
+    } else {
+        return false
+    }
+}
+
+const manageSearchId = (hash) => {
+    const queryString = hash.split('?')[1]
+    const params = new URLSearchParams(queryString)
+    const id = params.get("search")
     if(id){
         return id
     } else {

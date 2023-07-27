@@ -34,10 +34,14 @@ class Footer extends HTMLElement{
                     <form class="footer__form">
                         <div class="form__name">
                             <label for="" class="label__name">Nombre</label>
-                            <input type="text" class="input__name">
+                            <input type="text" class="input__name" required>
                         </div>
                         <div class="form__textarea">
+<<<<<<< HEAD
                             <textarea class="input__textarea" placeholder="Escribe tu mensaje" cols="30" rows="3"></textarea>
+=======
+                            <textarea class="input__textarea" placeholder="Escribe tu mensaje" cols="30" rows="3" required></textarea>
+>>>>>>> 4bdbdf1e76784e3dacbeeaf42749029f03b9833b
                         </div>
                         <button type="submit" class="footer__btn">Enviar mensaje</button>
                     </form>
