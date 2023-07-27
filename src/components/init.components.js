@@ -48,3 +48,9 @@ import("./panel/perfil/perfil.js")
 
 // MODAL CONFIRM
 import("./modal-confirm/modal-confirm.js")
+
+// SEARCH COMPONENT
+import("./search/search-component/search-prods.js")
+
+// SEARCH VIEW
+import("./search/search-view/search.js")

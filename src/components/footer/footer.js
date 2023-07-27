@@ -20,12 +20,12 @@ class Footer extends HTMLElement{
                     </div>
                     <div class="footer__links">
                         <ul class="footer__list">
-                            <li><a href="">Quienes somos</a></li>
-                            <li><a href="">Políticas de privacidad</a></li>
-                            <li><a href="">Programa de fidelidad</a></li>
-                            <li><a href="">Nuestras tiendas</a></li>
-                            <li><a href="">Quiero ser franquiciado</a></li>
-                            <li><a href="">Anúncie aquí</a></li>
+                            <li><a href="#">Quienes somos</a></li>
+                            <li><a href="#">Políticas de privacidad</a></li>
+                            <li><a href="#">Programa de fidelidad</a></li>
+                            <li><a href="#">Nuestras tiendas</a></li>
+                            <li><a href="#">Quiero ser franquiciado</a></li>
+                            <li><a href="#">Anúncie aquí</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,11 +34,10 @@ class Footer extends HTMLElement{
                     <form class="footer__form">
                         <div class="form__name">
                             <label for="" class="label__name">Nombre</label>
-                            <input type="text" class="input__name">
+                            <input type="text" class="input__name" required>
                         </div>
                         <div class="form__textarea">
-                            <label for="" class="label__textearea">Escribe tu mensaje</label>
-                            <textarea class="input__textarea" name="" id="" cols="30" rows="3"></textarea>
+                            <textarea class="input__textarea" placeholder="Escribe tu mensaje" cols="30" rows="3" required></textarea>
                         </div>
                         <button type="submit" class="footer__btn">Enviar mensaje</button>
                     </form>
