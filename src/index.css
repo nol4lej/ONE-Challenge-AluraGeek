@@ -53,15 +53,7 @@
 @import url("/src/components/modal-confirm/modal-confirm.css");
 
 /* SEARCH COMPONENT */
-<<<<<<< HEAD
 @import url("/src/components/search/search-component/search-component.css");
-=======
-@import url("/src/components/search/search-component/search-prods.css");
-
-@import url("/src/components/search/search-view/search.css");
-
-/* SEARCH VIEW */
->>>>>>> 4bdbdf1e76784e3dacbeeaf42749029f03b9833b
 
 :root{
     --color-white: #FFFFFF;

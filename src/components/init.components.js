@@ -50,11 +50,4 @@ import("./panel/perfil/perfil.js")
 import("./modal-confirm/modal-confirm.js")
 
 // SEARCH COMPONENT
-<<<<<<< HEAD
 import("./search/search-component/search-component.js")
-=======
-import("./search/search-component/search-prods.js")
-
-// SEARCH VIEW
-import("./search/search-view/search.js")
->>>>>>> 4bdbdf1e76784e3dacbeeaf42749029f03b9833b

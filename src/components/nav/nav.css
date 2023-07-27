@@ -28,6 +28,15 @@
     height: 28px;
 }
 
+/* SEARCH */
+.search__input{
+    display: none;
+}
+
+.search__button{
+    color: var(--color-gray-light);
+}
+
 /* BUTTONS */
 
 .nav__buttons{
@@ -37,6 +46,7 @@
 
 .buttons__list{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
 }
@@ -67,10 +77,26 @@
         width: 50%;
     }
 
+    /* SEARCH */
+    .nav__search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 272px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: var(--bg-gray-light);
+    }
+
+    .search__input{
+        display: flex;
+        border: none;
+        background: none;
+    }
+
     .buttons__item{
         width: 133px;
     }
-
 
 }
 

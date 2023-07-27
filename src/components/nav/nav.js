@@ -18,9 +18,13 @@ export class NavBar extends HTMLElement{
             <nav class="nav">
                 <div class="nav__logo__search">
                     <div class="nav__logo">
-                        <a href="#"><img src="${logo}" alt="Logo" class="nav__img"></a>  
+                    <a href="#"><img src="${logo}" alt="Logo" class="nav__img"></a>
+                        
                     </div>
-                    <search-products></search-products>
+                    <div class="nav__search">
+                        <input class="search__input" type="text" placeholder="¿Qué deseas buscar?">
+                        <button class="material-icons search__button">search</button>
+                    </div>
                 </div>
                 <div class="nav__buttons">
                     <ul class="buttons__list" id="buttons">
