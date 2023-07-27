@@ -18,7 +18,7 @@ class Users extends Subject{
     async login(inputUser, password){
         return new Promise( async (resolve, reject) => {
             try {
-                const users = await fetchGet("https://json-server-k3m3.onrender.com/users")
+                const users = await fetchGet("https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/users")
                 let userFound = false;
 
                 if(!users){
@@ -90,7 +90,7 @@ class Users extends Subject{
             if(verify.valueExists){
                 throw "El usuario o email ingresado ya existe."
             }
-            const res = await fetchPost("https://json-server-k3m3.onrender.com/users", newUser)
+            const res = await fetchPost("https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/users", newUser)
             return "Usuario creado exitosamente."
 
         } catch (error) {   
@@ -120,7 +120,7 @@ class Users extends Subject{
             const newUserObject = { ...newUser } // Crear una copia independiente del objeto newUser
             propsToEmit.forEach(prop => delete newUserObject[prop]) // recorro el array con las key que quiero eliminar
 
-            fetch("https://json-server-k3m3.onrender.com/users")
+            fetch("https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/users")
             .then(res => res.json())
             .then(users => {
 

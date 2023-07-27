@@ -25,6 +25,7 @@ const pages = {
 export const router = (hash) => {
     const root = document.getElementById("root")
     root.innerHTML = ""
+    root.scrollIntoView({ behavior: 'smooth' });
     
     switch (true) {
         case hash.startsWith("#/id="):

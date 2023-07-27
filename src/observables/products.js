@@ -22,7 +22,7 @@ class ProductsSubject extends Subject{
     }
 
     async fetchProducts(){
-        const products = await fetchGet('https://json-server-k3m3.onrender.com/productos')
+        const products = await fetchGet('https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/productos')
         state.products = products  // Actualizamos el estado global con los productos
         // this.orderByCategory(products)
         this.notify(products)
@@ -58,7 +58,7 @@ class ProductsSubject extends Subject{
 
     async getProduct(currentId) {
         try {
-            const res = await fetchGet(`https://json-server-k3m3.onrender.com/productos/${currentId}`)
+            const res = await fetchGet(`https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/productos/${currentId}`)
             return res;
         } catch (error) {
             console.error("No se puede traer el producto:", error)
@@ -77,7 +77,7 @@ class ProductsSubject extends Subject{
         }
 
         try {
-            const res = await fetchPost("https://json-server-k3m3.onrender.com/productos/", newProduct)
+            const res = await fetchPost("https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/productos", newProduct)
             state.products.push(newProduct)
             this.notify(newProduct)
             return "Producto agregado correctamente."
@@ -97,7 +97,7 @@ class ProductsSubject extends Subject{
         }
 
         try {
-            const res = await fetchPut(`https://json-server-k3m3.onrender.com/productos/${id}`, updateProd)
+            const res = await fetchPut(`https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/productos/${id}`, updateProd)
             this.fetchProducts() // hago nuevamente un fetch para actualizar todos los productos
             return "Producto actualizado correctamente."
         } catch (error) {
@@ -107,7 +107,7 @@ class ProductsSubject extends Subject{
 
     async deleteProduct(id){
         try {
-            const res = await fetchDelete(`https://json-server-k3m3.onrender.com/productos/${id}`)
+            const res = await fetchDelete(`https://json-server-vercel-bh3xdo885-nol4lej.vercel.app/productos/${id}`)
             console.log(res)
             this.fetchProducts() // hago nuevamente un fetch para actualizar todos los productos
             return "Producto eliminado correctamente."

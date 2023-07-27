@@ -81,16 +81,16 @@ footer-component{
     background-color: var(--color-white);
 }
 
-.label__textearea{
+.input__textarea{
+    border: none;
+    resize: none;
+}
+
+.input__textarea::placeholder{
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     color: var(--color-gray-light);
-}
-
-.input__textarea{
-    border: none;
-    resize: none;
 }
 
 .footer__btn{

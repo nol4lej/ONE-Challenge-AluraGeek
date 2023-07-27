@@ -52,6 +52,9 @@
 /* MODAL CONFIRM */
 @import url("/src/components/modal-confirm/modal-confirm.css");
 
+/* SEARCH COMPONENT */
+@import url("/src/components/search/search-component/search-component.css");
+
 :root{
     --color-white: #FFFFFF;
     --color-blue: #2A7AE4;
@@ -74,4 +77,8 @@
 body, textarea{
     font-family: 'Raleway';
     transition: all .5s ease-in-out;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
