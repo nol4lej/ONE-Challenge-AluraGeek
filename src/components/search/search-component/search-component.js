@@ -17,28 +17,33 @@ export class SearchComponent extends HTMLElement{
     render(){
         this.innerHTML = `
             <div class="nav__search" id="nav-search-container">
-                <input id="search-input" class="search__input" type="text" placeholder="¿Qué deseas buscar?">
+                <input id="search-input" class="search__input" type="text" placeholder="¿Qué deseas buscar?" autocomplete="off">
                 <a href="#" id="search-button" class="material-icons search__button">search</a>
             </div>
+            <ul id="product-list" class="product__list"></ul>
         `
     }
 
     handleSearchInput(){
         const searchInput = this.querySelector("#search-input")
         const btnSearch = this.querySelector("#search-button")
+        const list = this.querySelector("#product-list")
+        const navContainer = this.querySelector("#nav-search-container")
 
         searchInput.addEventListener("input", (event) => {
             const inputValue = event.target.value.toLowerCase()
 
-            // 1.- Limpio la url de los productos acumulados anteriormente.
+            // 1.- Limpio la url de los productos acumulados anteriormente y la mini vista
             btnSearch.setAttribute("href", `#`)
             this.searchUrl = ""
+            list.innerHTML = ""
+            navContainer.classList.remove("search")
 
-            // 2.- Condicion que limpia la url
+            // 2.- Condicion que limpia la url y la minivista
             if(inputValue === ""){
                 this.searchUrl = ""
+                list.innerHTML = ""
                 btnSearch.setAttribute("href", `#`)
-                // searchInput.value = ""
                 return
             }
 
@@ -46,9 +51,13 @@ export class SearchComponent extends HTMLElement{
             const results = state.products.filter(product => {
                 return product.name.toLowerCase().startsWith(inputValue) || product.name.toLowerCase().includes(inputValue)
             })
-            
+
+            // se agrega por efecto del nav containe
+            navContainer.classList.add("search")
+
             // 4.- Si no hay resultados agrego la url "#/?search=" para renderizar que no hay resultados.
             if(results.length < 1){
+                navContainer.classList.remove("search")
                 btnSearch.setAttribute("href", `#/?search=`)
             }
 
@@ -64,13 +73,23 @@ export class SearchComponent extends HTMLElement{
             item.innerHTML = `
                 <a href="#/id=${product.id}" class="search__item">
                     <img class="search__img" src="${product.imageUrl}" alt="${product.name}">
-                    <p>${product.name.slice(0,20)}</p>
+                    <p class="search__item__name">${product.name.slice(0,20)}</p>
                 </a>
             `
             // capturo el id y creo la url para el boton search
             this.createUrl(product.id)
             return item
         })
+
+        this.renderMiniView(resultsFilter)
+    }
+
+    renderMiniView(resultsFilter){
+        const list = this.querySelector("#product-list")
+        // recorro el array con los productos listos para renderizar y los agrego a "view"
+        resultsFilter.forEach(item => {
+            list.appendChild(item);
+        });
     }
 
     createUrl(id){
@@ -108,6 +127,8 @@ export class SearchComponent extends HTMLElement{
         const btnSearch = this.querySelector("#search-button")
         const searchContainer = this.querySelector("#nav-search-container")
         const searchInput = this.querySelector("#search-input")
+        const list = this.querySelector("#product-list")
+        const navContainer = this.querySelector("#nav-search-container")
         
         let isListenerActive = false; // Variable para controlar si el listener está activo
 
@@ -131,6 +152,14 @@ export class SearchComponent extends HTMLElement{
         activateListener(); // Activar o desactivar el listener inicialmente
     
         window.addEventListener("resize", () => {
+             // si hay resize, se limpia la lista. Esto es para la mini vista
+            btnSearch.setAttribute("href", `#`)
+            this.searchUrl = ""
+            list.innerHTML = ""
+            searchInput.value = ""
+            navContainer.classList.remove("search")
+            searchInput.classList.remove("active");
+
             activateListener(); // Activar o desactivar el listener cuando se redimensione la ventana
         });
     }
