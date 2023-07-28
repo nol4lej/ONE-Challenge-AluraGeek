@@ -1,5 +1,5 @@
-import("../../components/login/login")
 import("../../components/login/login.css")
+import("../../components/login/login")
 
 export const login = () => {
     const container = `

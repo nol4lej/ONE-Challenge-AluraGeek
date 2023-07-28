@@ -1,5 +1,5 @@
-import("../../components/panel/perfil/perfil.js")
 import("../../components/panel/perfil/perfil.css")
+import("../../components/panel/perfil/perfil.js")
 
 export const panel = () => {
     const container = `

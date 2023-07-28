@@ -1,5 +1,5 @@
-import("../../components/panel/manage-prods/manage-prods.js")
 import("../../components/panel/manage-prods/manage-prods.css")
+import("../../components/panel/manage-prods/manage-prods.js")
 
 export const ManageProduct = (isManage) => {
     const container = `

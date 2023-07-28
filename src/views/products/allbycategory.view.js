@@ -1,5 +1,5 @@
-import("../../components/all-products-category/allbycategory.js")
 import("../../components/all-products-category/allbycategory.css")
+import("../../components/all-products-category/allbycategory.js")
 
 export const allByCategoryView = (category) => {
     const container = `

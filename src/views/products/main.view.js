@@ -1,8 +1,7 @@
-import("../../components/header/header.js")
 import("../../components/header/header.css")
-
-import("../../components/main/main")
 import("../../components/main/main.css")
+import("../../components/header/header.js")
+import("../../components/main/main")
 
 export const MainView = () => {
     const container = `

@@ -1,8 +1,7 @@
-import("../../components/panel/admin-prods/admin-prods.js")
-import("../../components/panel/admin-prods/admin-prods.css")
-
-import("../../components/modal-confirm/modal-confirm.js")
 import("../../components/modal-confirm/modal-confirm.css")
+import("../../components/panel/admin-prods/admin-prods.css")
+import("../../components/panel/admin-prods/admin-prods.js")
+import("../../components/modal-confirm/modal-confirm.js")
 
 export const admin = () => {
     const container = `
