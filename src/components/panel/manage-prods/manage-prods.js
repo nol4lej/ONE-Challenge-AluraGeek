@@ -34,7 +34,7 @@ export class ManageProducts extends HTMLElement{
         <section class="addform__container">
             <div class="add__title">
                 <h2>Agregar nuevo producto</h2>
-                <a href="#/panel/administrar" class="add__back"><i class="material-icons">arrow_back</i>Volver</a>
+                <a href="#/panel/admin" class="add__back"><i class="material-icons">arrow_back</i>Volver</a>
             </div>
             <form id="manageproduct-form" class="add__form">
                 <div class="add__img">

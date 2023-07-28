@@ -48,7 +48,7 @@ export class NavPanel extends HTMLElement{
             const panelBtn = document.createElement("div")
             panelBtn.classList.add("admin__btn__container")
             panelBtn.innerHTML = `
-                <a href="#/panel/administrar" id="admin-nav" class="nav__panel__btn">Administrar productos</a>
+                <a href="#/panel/admin" id="admin-nav" class="nav__panel__btn">Administrar productos</a>
             `
             nav.appendChild(panelBtn)
             this.handleAdmin()
