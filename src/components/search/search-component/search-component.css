@@ -14,8 +14,8 @@
     align-items: center;
 }
 
-/*  */
-/* SIRVE PARA CUANDO SE DE CLICK EN EL BOTON SE MUESTRE EL SEARCH */
+
+/* ACTIVE SIRVE PARA CUANDO SE DE CLICK EN EL BOTON SE MUESTRE EL SEARCH EN RESPONSIVE */
 .nav__search.active{
     display: flex;
     align-items: center;
@@ -33,6 +33,7 @@
     background: none;
     width: 100%;
 }
+/* --------------------------------------- */
 
 @media screen and (min-width: 768px) {
 
