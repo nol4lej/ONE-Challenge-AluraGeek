@@ -9,13 +9,14 @@ export class SearchComponent extends HTMLElement{
     connectedCallback(){
         this.render()
         this.handleSearchInput()
+        this.handleSearchWidth()
     }
 
     render(){
         this.innerHTML = `
-            <div class="nav__search">
+            <div class="nav__search" id="nav-search-container">
                 <input id="search-input" class="search__input" type="text" placeholder="¿Qué deseas buscar?">
-                <button class="material-icons search__button">search</button>
+                <a href="#" id="search-button" class="material-icons search__button">search</a>
             </div>
         `
     }
@@ -42,6 +43,38 @@ export class SearchComponent extends HTMLElement{
         })
 
 
+    }
+
+    // metodo que controla la activacion search en responsive
+    handleSearchWidth(){
+        const btn = this.querySelector("#search-button")
+        const searchContainer = this.querySelector("#nav-search-container")
+        const searchInput = this.querySelector("#search-input")
+        
+        let isListenerActive = false; // Variable para controlar si el listener está activo
+
+        const toggleSearch = () => {
+            searchContainer.classList.toggle("active");
+            searchInput.classList.toggle("active");
+        };
+    
+        const activateListener = () => {
+            if (!isListenerActive && innerWidth < 768) {
+                btn.addEventListener("click", toggleSearch);
+                isListenerActive = true;
+            } else if (isListenerActive && innerWidth >= 768) {
+                searchContainer.classList.remove("active");
+                searchInput.classList.remove("active");
+                btn.removeEventListener("click", toggleSearch);
+                isListenerActive = false;
+            }
+        };
+    
+        activateListener(); // Activar o desactivar el listener inicialmente
+    
+        window.addEventListener("resize", () => {
+            activateListener(); // Activar o desactivar el listener cuando se redimensione la ventana
+        });
     }
 
 }

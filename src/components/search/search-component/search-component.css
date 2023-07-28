@@ -1,5 +1,6 @@
 .search__input{
     display: none;
+    transition: all .5s ease-in-out;
 }
 
 .search__button{
@@ -7,17 +8,54 @@
 }
 
 .nav__search{
+    transition: all .5s ease-in-out;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/*  */
+/* SIRVE PARA CUANDO SE DE CLICK EN EL BOTON SE MUESTRE EL SEARCH */
+.nav__search.active{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 272px;
+    max-width: 272px;
+    padding: 0 10px;
     height: 40px;
     border-radius: 20px;
     background-color: var(--bg-gray-light);
 }
 
-.search__input{
+.search__input.active{
     display: flex;
     border: none;
     background: none;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+
+    search-products{
+        width: 100%;
+    }
+
+    .nav__search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 272px;
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: var(--bg-gray-light);
+    }
+
+    .search__input{
+        display: flex;
+        border: none;
+        background: none;
+        width: 100%;
+    }
+
 }
