@@ -17,7 +17,6 @@ const pages = {
 
 export const router =  async (hash) => {
     const root = document.getElementById("root")
-    // root.innerHTML = ""
     root.innerHTML = "<loader-component></loader-component>"
     root.scrollIntoView({ behavior: 'smooth' });
 

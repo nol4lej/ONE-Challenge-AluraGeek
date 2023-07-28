@@ -1,6 +1,7 @@
 footer-component{
     display: flex;
     flex-direction: column;
+    transition: all .5s ease-in-out;
 }
 
 .footer__contact-links{
