@@ -1,5 +1,5 @@
 import("../../components/register/register.css")
-import("../../components/register/register")
+import("../../components/register/register.js")
 
 export const register = () => {
     const container = `

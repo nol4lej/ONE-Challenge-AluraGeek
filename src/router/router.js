@@ -12,7 +12,8 @@ const pages = {
     "#/panel/product?add": helpers.loadPanelProducts,
     "#/panel/product?edit=": helpers.loadPanelProducts,
     "#/id=": helpers.loadViewProduct,
-    "#/category=": helpers.loadAllByCategory
+    "#/category=": helpers.loadAllByCategory,
+    "#/?search=": helpers.loadSearchProducts
 }
 
 export const router =  async (hash) => {
@@ -38,6 +39,11 @@ export const router =  async (hash) => {
 
         case hash.startsWith("#/panel/product?edit="):
             route = pages["#/panel/product?edit="]
+            root.innerHTML = await route(hash)
+            break;
+
+        case hash.startsWith("#/?search="):
+            route = pages["#/?search="]
             root.innerHTML = await route(hash)
             break;
 

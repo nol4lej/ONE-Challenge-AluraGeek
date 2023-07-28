@@ -30,11 +30,11 @@ export class SearchComponent extends HTMLElement{
         searchInput.addEventListener("input", (event) => {
             const inputValue = event.target.value.toLowerCase()
 
-            // Limpio la url de los productos acumulados anteriormente.
+            // 1.- Limpio la url de los productos acumulados anteriormente.
             btnSearch.setAttribute("href", `#`)
             this.searchUrl = ""
 
-            // 1.- Condicion que limpia la url
+            // 2.- Condicion que limpia la url
             if(inputValue === ""){
                 this.searchUrl = ""
                 btnSearch.setAttribute("href", `#`)
@@ -42,13 +42,17 @@ export class SearchComponent extends HTMLElement{
                 return
             }
 
-            // 2.- caputo los productos que su "name" comience con las letras que yo ingrese en el input.
+            // 3.- caputo los productos que su "name" comience con las letras que yo ingrese en el input.
             const results = state.products.filter(product => {
                 return product.name.toLowerCase().startsWith(inputValue) || product.name.toLowerCase().includes(inputValue)
             })
             
-            console.log(results)
-            // 3.- preparo los productos para renderizar
+            // 4.- Si no hay resultados agrego la url "#/?search=" para renderizar que no hay resultados.
+            if(results.length < 1){
+                btnSearch.setAttribute("href", `#/?search=`)
+            }
+
+            // 5.- preparo los productos para renderizar
             this.prepareProducts(results)
 
         })
@@ -83,12 +87,19 @@ export class SearchComponent extends HTMLElement{
     handleClickButton(){
         const btnSearch = this.querySelector("#search-button")
         const searchInput = this.querySelector("#search-input")
-        btnSearch.addEventListener("click", () => {
+        btnSearch.addEventListener("click", (event) => {
+
+            // si el input está vacio no recarga la pagina al hacer click en el search button
+            if(searchInput.value === ""){
+                return event.preventDefault()
+            }
+
             setTimeout(() => {
                 this.searchUrl = ""
+                searchInput.value = ""
                 btnSearch.setAttribute("href", `#`)
             }, 100);
-            searchInput.value = ""
+            
         })
     }
 
