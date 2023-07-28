@@ -12,6 +12,7 @@ export class SearchComponent extends HTMLElement{
         this.handleSearchInput()
         this.handleSearchWidth()
         this.handleClickButton()
+        this.handleHashChange()
     }
 
     render(){
@@ -114,9 +115,7 @@ export class SearchComponent extends HTMLElement{
             }
 
             setTimeout(() => {
-                this.searchUrl = ""
-                searchInput.value = ""
-                btnSearch.setAttribute("href", `#`)
+                this.clearUrlAndDOM()
             }, 100);
             
         })
@@ -127,8 +126,6 @@ export class SearchComponent extends HTMLElement{
         const btnSearch = this.querySelector("#search-button")
         const searchContainer = this.querySelector("#nav-search-container")
         const searchInput = this.querySelector("#search-input")
-        const list = this.querySelector("#product-list")
-        const navContainer = this.querySelector("#nav-search-container")
         
         let isListenerActive = false; // Variable para controlar si el listener está activo
 
@@ -152,16 +149,30 @@ export class SearchComponent extends HTMLElement{
         activateListener(); // Activar o desactivar el listener inicialmente
     
         window.addEventListener("resize", () => {
-             // si hay resize, se limpia la lista. Esto es para la mini vista
-            btnSearch.setAttribute("href", `#`)
-            this.searchUrl = ""
-            list.innerHTML = ""
-            searchInput.value = ""
-            navContainer.classList.remove("search")
-            searchInput.classList.remove("active");
-
+            this.clearUrlAndDOM()
             activateListener(); // Activar o desactivar el listener cuando se redimensione la ventana
         });
+    }
+
+    handleHashChange(){
+        window.addEventListener("hashchange", () => {
+            const list = this.querySelector("#product-list")
+            this.clearUrlAndDOM()
+        })
+    }
+
+    clearUrlAndDOM(){
+        const btnSearch = this.querySelector("#search-button")
+        const searchInput = this.querySelector("#search-input")
+        const list = this.querySelector("#product-list")
+        const navContainer = this.querySelector("#nav-search-container")
+
+        btnSearch.setAttribute("href", `#`)
+        this.searchUrl = ""
+        list.innerHTML = ""
+        searchInput.value = ""
+        navContainer.classList.remove("search")
+        searchInput.classList.remove("active");
     }
 
 }
